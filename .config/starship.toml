@@ -1,0 +1,121 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+[ ]()[╭─](fg:240)[ ](fg:240)\
+$all\
+[\uE0B0](fg:240)$fill\
+[\uE0B2 ](fg:240)\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$memory_usage\
+$battery\
+$os\
+$container\
+$shell\
+[─╮](fg:240)[ ]()
+[ ]()[╰─](fg:240)\
+$sudo\
+$character\
+"""
+
+right_format = """
+[\uE0B2 ](fg:240)\
+$status\
+$cmd_duration\
+$jobs\
+$time\
+[─╯](fg:240)\
+"""
+
+[fill]
+symbol = " "
+
+[git_commit]
+only_detached = true
+tag_disabled = false
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+conflicted = "[=$count] "
+ahead = "[⇡$count](green) "
+behind = "[⇣$count](green) "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+up_to_date = ""
+untracked = "[?$count](cyan) "
+stashed = "[*$count](green) "
+modified = "[!$count](orange) "
+staged = "[+$count](yellow) "
+renamed = "[»$count](blue) "
+deleted = "[✘$count](red) "
+
+[line_break]
+disabled = true
+
+[os]
+format = "on [$type](dimmed bold blue) "
+disabled = true
+
+[shell]
+disabled = true
+
+[status]
+format = "[$symbol ]($style) "
+style = "bold red"
+success_symbol = "[✔](green)"
+disabled = false
+
+[time]
+format = "[$time \uF017](75)  "
+disabled = false

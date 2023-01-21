@@ -1,0 +1,7 @@
+[user]
+    name = Simon Jödicke
+    email = simon.joedicke@code.berlin
+
+[core]
+    editor = /usr/bin/nvim
+
