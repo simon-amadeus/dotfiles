@@ -20,5 +20,5 @@ exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 
 # Password Manager
-exec 1password
+exec 1password --silent
 
