@@ -12,7 +12,7 @@ input type:touchpad {
 
 # Read `man 5 sway-input` for more information about this section.
 #
-input type:keyboard xkb_layout "us"
+input type:keyboard xkb_layout "de"
 input type:keyboard repeat_delay 200
 
 exec_always {

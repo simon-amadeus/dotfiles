@@ -5,10 +5,14 @@ SAVEHIST=100000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# Include hidden files in substring completion
+#setopt globdots
+
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate _ignored
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:*' file-patterns '%p(D):globbed-files *(D-/):directories' '*(D):all-files'
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
@@ -19,9 +23,6 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# Include hidden files in substring completion
-setopt globdots
 
 # Set default editor
 if [[ -n $SSH_CONNECTION ]]; then
