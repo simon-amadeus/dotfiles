@@ -12,7 +12,7 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
-zstyle :compinstall filename '/home/knowone/completionzshrc'
+zstyle :compinstall filename '/home/knowone/.zshrc'
 
 autoload -Uz compinit
 compinit
