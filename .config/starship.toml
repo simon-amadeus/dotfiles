@@ -3,7 +3,7 @@
 add_newline = true
 
 format = """
-[ ]()[╭─](fg:240)[ ](fg:240)\
+[╭─](fg:240)[ ](fg:240)\
 $all\
 [\uE0B0](fg:240)$fill\
 [\uE0B2 ](fg:240)\
@@ -64,8 +64,8 @@ $battery\
 $os\
 $container\
 $shell\
-[─╮](fg:240)[ ]()
-[ ]()[╰─](fg:240)\
+[─╮](fg:240)
+[╰─](fg:240)\
 $sudo\
 $character\
 """

@@ -24,6 +24,7 @@ else
     export EDITOR='vim'
 fi
 
+ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
 
 source ~/.oh-my-zshrc
