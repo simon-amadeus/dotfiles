@@ -1,18 +1,21 @@
 # Assign workspaces
-assign [app_id="Code"] 2
+assign [app_id="Code"] 6
 for_window [app_id="Code"] focus
 
-assign [class="Code"] 2
+assign [class="Code"] 6
 for_window [class="Code"] focus
 
-assign [app_id="firefox"] 2
+assign [app_id="firefox"] 6
 for_window [app_id="firefox"] focus
 
-assign [class="firefox"] 2
+assign [class="firefox"] 6
 for_window [class="firefox"] focus
 
-assign [app_id=thunar] 3
-for_window [app_id=thunar] focus
+assign [class="Spotify"] 10
+for_window [class="Spotify"] focus
+
+assign [app_id="thunar"] 3
+for_window [app_id="thunar"] focus
 
 assign [class="Telegram"] 4
 for_window [class="Telegram"] focus
