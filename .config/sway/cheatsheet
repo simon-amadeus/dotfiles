@@ -15,7 +15,7 @@ important ones are listed at the bottom of the document. Waybar is also document
 
  = windows key
 
-# start floating xfce4-terminal
+# start floating alacritty-terminal
 +Return 
 
 # start fixed termite-terminal
@@ -150,6 +150,7 @@ They are enabled -  you may need to hold down the function key while doing so.
 # App Shortcuts:
 +n thunar
 +o firefox
++c vscode
 
 
 # Other Things:
