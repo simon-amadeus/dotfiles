@@ -6,27 +6,35 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate _ignored
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
-zstyle :compinstall filename '/home/knowone/.zshrc'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$HOME/.cache/zsh/.zcompcache"
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Include hidden files in substring completion
+setopt globdots
+
+# Set default editor
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nvim'
 else
     export EDITOR='vim'
 fi
 
+# Custom prompt
 ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
 
+# Oh-my-zsh
 source ~/.oh-my-zshrc
 
 # .dotfiles
