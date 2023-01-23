@@ -38,6 +38,12 @@ eval "$(starship init zsh)"
 # Oh-my-zsh
 source ~/.oh-my-zshrc
 
+#
+# Custom Aliases
+#
 # .dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Fix vscode lagging
+alias code='/usr/bin/code --disable-gpu'
 
