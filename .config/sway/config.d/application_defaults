@@ -1,7 +1,4 @@
 # Assign workspaces
-assign [app_id="Code"] 6
-for_window [app_id="Code"] focus
-
 assign [class="Code"] 6
 for_window [class="Code"] focus
 
@@ -11,8 +8,7 @@ for_window [app_id="firefox"] focus
 assign [class="firefox"] 6
 for_window [class="firefox"] focus
 
-assign [class="Spotify"] 10
-for_window [class="Spotify"] focus
+for_window [class="Spotify"] move window to workspace number 10
 
 assign [app_id="thunar"] 3
 for_window [app_id="thunar"] focus
