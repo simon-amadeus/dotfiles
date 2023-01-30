@@ -1,4 +1,7 @@
 # Assign workspaces
+assign [app_id="Alacritty"] 1
+for_window [app_id="Alacritty"] focus
+
 assign [class="Code"] 6
 for_window [class="Code"] focus
 

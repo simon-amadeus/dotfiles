@@ -67,6 +67,9 @@ exec swayidle -w\
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Poweroff
+    bindsym $mod+Shift+p exec poweroff
+
 #
 # Moving around:
 #
