@@ -47,3 +47,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Fix vscode lagging
 alias code='/usr/bin/code --disable-gpu'
 
+#
+## Custom Path
+#
+# Flutter
+export PATH="$PATH:/opt/flutter/bin"
+

@@ -5,3 +5,5 @@
 [core]
     editor = /usr/bin/nvim
 
+[safe]
+	directory = /opt/flutter
