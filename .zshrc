@@ -25,10 +25,8 @@ compinit
 # End of lines added by compinstall
 
 # Set default editor
-if [[ -n $SSH_CONNECTION ]]; then
+if command -v nvim &> /dev/null; then
     export EDITOR='nvim'
-else
-    export EDITOR='vim'
 fi
 
 # Custom prompt
