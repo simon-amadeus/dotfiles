@@ -51,6 +51,9 @@ alias code='/usr/bin/code --disable-gpu'
 # Helix Editor
 alias hx='helix'
 
+# Insights Client
+alias insights="$HOME/.flutter-bin/insights-client/insights_client"
+
 #
 ## Custom Path
 #
