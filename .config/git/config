@@ -1,9 +1,9 @@
 [user]
-    name = Simon Jödicke
-    email = simon.joedicke@code.berlin
+	name = Simon Amadeus
+	email = simon.joedicke@code.berlin
 
 [core]
-    editor = /usr/bin/nvim
+	editor = /usr/bin/nvim
 
 [safe]
 	directory = /opt/flutter

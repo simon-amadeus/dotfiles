@@ -58,7 +58,7 @@ Arc-Dark Color Scheme
     /*background-color: @base1;*/
     background-color: rgba(0,0,0,0.6);
     font-family: UbuntuMono;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 /* Every modules */
@@ -164,7 +164,7 @@ Arc-Dark Color Scheme
 }
 
 #workspaces {
-    font-size:13px;
+    font-size:12px;
 }
 
 #workspaces button {
@@ -177,11 +177,11 @@ Arc-Dark Color Scheme
     border-bottom: 3px solid  @highlight;
     margin-bottom: 1px;
     padding-left:0;
+    color: white;
 }
 
 #workspaces button.urgent {
     border-color: #c9545d;
-    color: #c9545d;
 }
 
 #custom-power {

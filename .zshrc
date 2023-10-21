@@ -36,8 +36,6 @@ eval "$(starship init zsh)"
 # Oh-my-zsh
 source ~/.oh-my-zshrc
 
-# NVM
-source /usr/share/nvm/init-nvm.sh
 
 #
 # Custom Aliases
@@ -48,9 +46,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Fix vscode lagging
 alias code='/usr/bin/code --disable-gpu'
 
-# Helix Editor
-alias hx='helix'
-
 # Insights Client
 alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 
@@ -59,6 +54,4 @@ alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 #
 # Flutter
 export PATH="$PATH:/opt/flutter/bin"
-# Yarn
-export PATH="$PATH:$(yarn global bin)"
 
