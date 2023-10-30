@@ -54,4 +54,10 @@ alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 #
 # Flutter
 export PATH="$PATH:/opt/flutter/bin"
+# Go
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
+#
+## 1Password CLI
+#
+source /home/knowone/.config/op/plugins.sh
