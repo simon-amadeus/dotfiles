@@ -2,22 +2,13 @@
 assign [class="Code"] 6
 for_window [class="Code"] focus
 
-assign [app_id="firefox"] 6
-for_window [app_id="firefox"] focus
+assign [app_id="firefoxdeveloperedition"] 6
+for_window [app_id="firefoxdeveloperedition"] focus
 
-assign [class="firefox"] 6
-for_window [class="firefox"] focus
+assign [class="firefoxdeveloperedition"] 6
+for_window [class="firefoxdeveloperedition"] focus
 
 for_window [class="Spotify"] move window to workspace number 10
-
-assign [app_id="thunar"] 3
-for_window [app_id="thunar"] focus
-
-assign [class="Telegram"] 4
-for_window [class="Telegram"] focus
-
-
-for_window [app_id="xed"] focus
 
 
 # set floating (nontiling)for apps needing it:
@@ -42,14 +33,14 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [window_role="About"] floating enable
 for_window [title="File Operation Progress"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="firefoxdeveloperedition" title="^Library$"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
 for_window [title="Picture in picture"] floating enable, sticky enable
 for_window [title="nmtui"] floating enable,  resize set width 50 ppt height 70 ppt
 for_window [title="htop"] floating enable, resize set width 50 ppt height 70 ppt
 for_window [app_id="xsensors"] floating enable
 for_window [title="Save File"] floating enable
-for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+for_window [app_id="firefoxdeveloperedition" title="Firefox — Sharing Indicator"] kill
 
 # Inhibit idle
 for_window [app_id="firefoxdeveloperedition"] inhibit_idle fullscreen
