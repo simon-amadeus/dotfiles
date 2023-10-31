@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 
-# audio control
+# Audio control
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $volume_down $(pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume)
@@ -37,6 +37,9 @@ exec swayidle -w\
 
 ## Lock Screen
     bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
+
+## Reconfigure outputs
+    bindsym $mod+Shift+o exec "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable; pkill kanshi; kanshi"
 
 ### Key bindings
 #
@@ -69,7 +72,6 @@ exec swayidle -w\
 
     # Poweroff
     bindsym $mod+Shift+p exec poweroff
-
 #
 # Moving around:
 #

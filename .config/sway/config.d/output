@@ -12,7 +12,6 @@
 
 # Dynamic screen setup
 exec_always "pkill kanshi; kanshi"
-exec_always "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable"
 
 # Workspaces
 workspace 1 output eDP-1
