@@ -19,8 +19,8 @@
     "modules-right": [
         "idle_inhibitor",
         "network",
-        //"memory",
-        //"cpu",
+        "memory",
+        "cpu",
         "pulseaudio",
         //"custom/keyboard-layout",
         //"battery",
@@ -64,14 +64,14 @@
 
     "clock": {
         "interval": 10,
-        "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
+        "format-alt": "  {:%e %b %Y}", // Icon: calendar-alt
         "format": "{:%H:%M}",
         "tooltip-format": "{:%e %B %Y}"
     },
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": "󰓅  {usage}% ({load})", // Icon: microchip
         "states": {
             "warning": 70,
             "critical": 90,
@@ -92,7 +92,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
+        "format": "󰍛  {}%", // Icon: memory
         "on-click": "alacritty -e 'htop'", 
         "states": {
             "warning": 70,
@@ -142,19 +142,19 @@
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "   {icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "🔇",
+        "format-bluetooth": " {icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " 󰓄 {format_source}",
+        "format-muted": "󰓄",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "🎧",
-            "hands-free": "וֹ",
-            "headset": "🎧",
+            "headphone": "󰓃",
+            "hands-free": "󰓃",
+            "headset": "󰓃",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [""]
+            "default": ["󰓃"]
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
