@@ -10,6 +10,7 @@
 /.config/*
 !/.config/alacritty
 !/.config/git
+!/.config/kanshi
 !/.config/nvim
 !/.config/oh-my-zsh
 !/.config/starship.toml
