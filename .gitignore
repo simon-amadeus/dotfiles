@@ -1,10 +1,11 @@
 /*
 !/.gitignore
-!/bla.tyt
-!/.zshenv
-!/.zshrc
 !/.oh-my-zshrc
 !/.profile
+!/.zprofile
+!/.zshrc
+!/.zshenv
+!/.zshrc
 
 !/.config
 /.config/*
