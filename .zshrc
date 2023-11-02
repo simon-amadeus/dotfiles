@@ -43,6 +43,9 @@ source ~/.oh-my-zshrc
 # .dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# lsd
+alias ls='lsd'
+
 # Fix vscode lagging
 alias code='/usr/bin/code --disable-gpu'
 
