@@ -10,7 +10,10 @@
 !/.config
 /.config/*
 !/.config/alacritty
+!/.config/bottom
+!/.config/Code/User/settings.json
 !/.config/git
+!/.config/helix
 !/.config/kanshi
 !/.config/nvim
 !/.config/oh-my-zsh

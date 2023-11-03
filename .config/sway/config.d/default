@@ -35,16 +35,27 @@ exec swayidle -w\
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+### Key bindings
+#
 ## Lock Screen
     bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
 
 ## Reconfigure outputs
     bindsym $mod+Shift+o exec "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable; pkill kanshi; kanshi"
 
-### Key bindings
 #
-# Basics:
+# App shortcuts
 #
+
+    # File Manager
+    bindsym $mod+n exec $term-float --command joshuto
+
+    # Web Browser
+    bindsym $mod+o exec firefox-developer-edition
+
+    # VS Code
+    bindsym $mod+c exec code --disable-gpu
+
     # Start a floating terminal
     bindsym $mod+Return exec $term-float
 
@@ -217,12 +228,6 @@ bindsym $mod+r mode "resize"
     bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +5%
     bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
 #
-# App shortcuts
-#
-    bindsym $mod+n exec thunar
-    bindsym $mod+o exec firefox-developer-edition
-    bindsym $mod+c exec code --disable-gpu
-#
 # Screenshots
 #
     bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
@@ -230,4 +235,4 @@ bindsym $mod+r mode "resize"
 #
 # Keybindings List
 #
-    bindsym $mod+t exec xed ~/.config/sway/cheatsheet
+    bindsym $mod+t exec helix ~/.config/sway/cheatsheet

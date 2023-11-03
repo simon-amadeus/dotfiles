@@ -25,8 +25,8 @@ compinit
 # End of lines added by compinstall
 
 # Set default editor
-if command -v nvim &> /dev/null; then
-    export EDITOR='nvim'
+if command -v helix &> /dev/null; then
+    export EDITOR='helix'
 fi
 
 # Custom prompt
@@ -41,13 +41,34 @@ source ~/.oh-my-zshrc
 # Custom Aliases
 #
 # .dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# lsd
-alias ls='lsd'
+# bat (cat alternative)
+alias cat='bat'
 
 # Fix vscode lagging
 alias code='/usr/bin/code --disable-gpu'
+
+# duf (df alternative)
+alias df='duf'
+
+# dust (du alternative)
+alias du='dust'
+
+# bottom (htop alternative)
+alias htop='btm'
+
+# feh (image viewer)
+alias feh='feh --scale-down'
+
+# helix (editor)
+alias hx='helix'
+
+# joshuto (file manager)
+alias files='joshuto'
+
+# lsd (ls alternative)
+alias ls='lsd'
 
 # Insights Client
 alias insights="$HOME/.flutter-bin/insights-client/insights_client"
