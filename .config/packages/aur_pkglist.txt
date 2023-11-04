@@ -1,0 +1,6 @@
+1password
+joshuto
+oh-my-zsh-git
+spotify
+visual-studio-code-bin
+yay-bin
