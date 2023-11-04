@@ -17,11 +17,14 @@
 !/.config/kanshi
 !/.config/nvim
 !/.config/oh-my-zsh
+!/.config/packages
 !/.config/starship.toml
 !/.config/sway
 !/.config/swaylock
 !/.config/waybar
 !/.config/wofi
+
+!/.scripts
 
 !/.ssh
 /.ssh/*

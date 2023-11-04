@@ -1,9 +1,42 @@
+[alias]
+	a = add
+	c = commit
+	s = status
+
 [user]
 	name = Simon Amadeus
 	email = simon.joedicke@code.berlin
 
+[color]
+	ui = auto
+
+[commit]
+	gpgsign = false
+
 [core]
-	editor = /usr/bin/nvim
+	autocrlf = input
+	editor = /usr/bin/helix
+	eol = lf
+	pager = /usr/bin/more
+
+[credential]
+	helper = cache --timeout=3600
+
+[diff]
+	algorithm = histogram
+
+[init]
+	defaultBranch = trunk
+
+[pull]
+	rebase = true
+
+[push]
+	default = simple
 
 [safe]
 	directory = /opt/flutter
+
+[tag]
+	forceSignAnnotated = false
+
