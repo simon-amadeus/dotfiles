@@ -40,6 +40,9 @@ source ~/.oh-my-zshrc
 #
 # Custom Aliases
 #
+# Allow aliases with sudo
+alias sudo='sudo '
+
 # .dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
