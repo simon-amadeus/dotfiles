@@ -7,10 +7,8 @@
     "height": 30,
 
     "modules-left": [
-        //"custom/launcher",
         "sway/workspaces",
         "sway/window",
-        "sway/mode",
     ],
  
     "modules-center": [
@@ -22,15 +20,8 @@
         "memory",
         "cpu",
         "pulseaudio",
-        //"custom/keyboard-layout",
-        //"battery",
-        //"custom/PBPbattery",
-        //"backlight#icon",
-        //"backlight#value",
+        "battery",
         "clock"
-        //"tray",
-        //"custom/weather",
-        //"custom/power",
     ],
 
     // Modules
@@ -57,11 +48,6 @@
         "format-icons": ["", "", "", "", ""]
     },
 
-    "custom/PBPbattery": {
-        "exec": "~/.config/waybar/scripts/PBPbattery.sh",
-        "format": "{}",
-    },
-
     "clock": {
         "interval": 10,
         "format-alt": "  {:%e %b %Y}", // Icon: calendar-alt
@@ -79,16 +65,6 @@
         "on-click": "alacritty -e 'htop'",
     },
 
-    "custom/keyboard-layout": {
-        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        // Interval set only as a fallback, as the value is updated by signal
-        "interval": 30,
-        "format": "  {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-        "signal": 1, // SIGHUP
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
-    },
 
     "memory": {
         "interval": 5,
@@ -105,7 +81,7 @@
         "format-wifi": "   {signalStrength}%", // Icon: wifi
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{essid} | {ipaddr}",
+        "tooltip-format": "{ipaddr} | {essid} {frequency}",
         "on-click": "alacritty -e 'nmtui'",
     },
     "network#vpn": {
@@ -113,11 +89,6 @@
         "format": "  {essid} ({signalStrength}%)",
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    },
-
-    "sway/mode": {
-        "format": "{}",
-        "tooltip": false
     },
 
     "sway/window": {
@@ -161,19 +132,6 @@
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
     },
 
-    // to use the weather module replace <your_location> with your city or town
-    // note: do not use spaces: new york would be newyork
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
-        "return-type": "json",
-        "interval": 600,
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing":10,
-     },
-
     "backlight#icon": {
         "format": "{icon}",
         "format-icons": [""],
@@ -185,35 +143,5 @@
          "format": "{percent}%",
          "on-scroll-down": "brightnessctl -c backlight set 1%-",
          "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "custom/firefox": {
-        "format": " ",
-        "on-click": "exec firefox",
-        "tooltip": false
-    },
-
-    "custom/terminal": {
-        "format": " ",
-        "on-click": "exec alacritty",
-        "tooltip": false
-    },
-
-    "custom/files": {
-        "format": " ",
-        "on-click": "exec thunar",
-        "tooltip": false
-    },
-
-    "custom/launcher": {
-        "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
-    },
-
-    "custom/power": {
-        "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
-        "tooltip": false,
     },
 }

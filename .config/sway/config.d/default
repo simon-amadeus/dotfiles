@@ -1,50 +1,104 @@
-# Sway Configuration File
+### Sway Configuration File
 
-# Environment Variables
+## Variables
+# Set Mod key to Mod4 (typically the Super key)
 set $mod Mod4
-set $term-float alacritty # Floating terminal
-set $menu wofi -c ~/.config/wofi/config -I # Application launcher
-set $powermenu ~/.config/waybar/scripts/power-menu.sh # Power menu script
 
-# Audio Variables (for pactl)
+# Set floating terminal to alacritty
+set $term-float alacritty
+
+# Set application launcher command
+set $menu wofi -c ~/.config/wofi/config -I
+
+# Set power menu script path
+set $powermenu ~/.config/waybar/scripts/power-menu.sh
+
+## Audio
+# Get the current sink volume
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | awk '{print $5}' | tr -d '%'
+
+# Get the current source volume
 set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | awk '{print $5}' | tr -d '%'
+
+# Decrease sink volume by 5%
 set $volume_down pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume
+
+# Increase sink volume by 5%
 set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume
+
+# Toggle sink mute status
 set $volume_mute pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'yes' && echo 0 || $sink_volume
+
+# Toggle source mute status
 set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo 0 || $source_volume
 
-# Idle Management
+
+# Idle
 exec swayidle -w timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
              timeout 600 'swaymsg "output * dpms off"' \
              resume 'swaymsg "output * dpms on"' \
              before-sleep 'swaylock -C ~/.config/swaylock/config'
 
+
 # Key Bindings
+
 # System Controls
-bindsym $mod+Shift+l exec ~/.config/sway/scripts/lockman.sh # Lock Screen
-bindsym $mod+Shift+o exec "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable; pkill kanshi" # Reconfigure outputs
-bindsym $mod+Shift+c reload # Reload Sway
-bindsym $mod+Shift+p exec poweroff # Poweroff
+# Lock screen with a custom script
+bindsym $mod+Shift+l exec ~/.config/sway/scripts/lockman.sh
+
+# Restart the display manager and kill kanshi on output toggle
+bindsym $mod+Shift+o exec "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable; pkill kanshi"
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Power off the system
+bindsym $mod+Shift+p exec poweroff
+
 
 # Application Shortcuts
-bindsym $mod+n exec $term-float --command joshuto # File Manager
-bindsym $mod+o exec firefox-developer-edition # Web Browser
-bindsym $mod+c exec code --disable-gpu # VS Code
-bindsym $mod+Return exec $term-float # Start a floating terminal
-bindsym $mod+Shift+e exec $powermenu # Open the power menu
-bindsym $mod+q kill # Kill focused window
-bindsym $mod+d exec $menu # Start your launcher
-bindsym $mod+p exec ~/.config/wofi/windows.py # Activities
+# Launch File Manager in floating terminal
+bindsym $mod+n exec $term-float --command joshuto
+
+# Launch web browser
+bindsym $mod+o exec firefox-developer-edition
+
+# Launch Visual Studio Code with disabled GPU acceleration
+bindsym $mod+c exec code --disable-gpu
+
+# Open a floating terminal
+bindsym $mod+Return exec $term-float
+
+# Open the power menu
+bindsym $mod+Shift+e exec $powermenu
+
+# Kill the focused window
+bindsym $mod+q kill
+
+# Start application launcher
+bindsym $mod+d exec $menu
+
+# Open the windows overlay
+bindsym $mod+p exec ~/.config/wofi/windows.py
+
 
 # Window Management
-floating_modifier $mod normal # Manage floating windows
+# Set modifier for floating window management
+floating_modifier $mod normal
 
 # Focus Management
+# Focus the window to the left
 bindsym $mod+Left focus left
+
+# Focus the window to the down
 bindsym $mod+Down focus down
+
+# Focus the window to the up
 bindsym $mod+Up focus up
+
+# Focus the window to the right
 bindsym $mod+Right focus right
+
 
 # Window Moving
 bindsym $mod+Shift+Left move left
@@ -76,39 +130,47 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+
 # Layout Shortcuts
-bindsym $mod+b splith # Split horizontal
-bindsym $mod+v splitv # Split vertical
+bindsym $mod+b splith
+bindsym $mod+v splitv
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+f fullscreen # Fullscreen toggle
-bindsym $mod+Shift+space floating toggle # Tiling/floating toggle
-bindsym $mod+space focus mode_toggle # Focus mode toggle
-bindsym $mod+a focus parent # Focus to parent container
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
 
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad # Move to scratchpad
-bindsym $mod+minus scratchpad show # Show scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # Resize Mode
+# Enter resize mode with keybindings for window resizing
 mode "resize" {
-    # Resize commands for width and height using arrow keys or hjkl
+    # Resize window width
     bindsym Left resize shrink width 10px
     bindsym Right resize grow width 10px
+    # Resize window height
     bindsym Up resize shrink height 10px
     bindsym Down resize grow height 10px
     # Exit resize mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize" # Enter resize mode
+# Enter resize mode
+bindsym $mod+r mode "resize"
 
 # Audio Controls
-bindsym XF86AudioRaiseVolume exec $volume_up # Increase volume
-bindsym XF86AudioLowerVolume exec $volume_down # Decrease volume
-bindsym XF86AudioMute exec $volume_mute # Mute volume
-bindsym XF86AudioMicMute exec $mic_mute # Mute microphone
+bindsym XF86AudioRaiseVolume exec $volume_up
+bindsym XF86AudioLowerVolume exec $volume_down
+bindsym XF86AudioMute exec $volume_mute
+bindsym XF86AudioMicMute exec $mic_mute
+
+# Backlight
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -116,5 +178,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot
-bindsym --release $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy # Screenshot selection to clipboard
+# Take a screenshot and copy to clipboard
+bindsym --release $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
