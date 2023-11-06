@@ -41,7 +41,7 @@ source ~/.oh-my-zshrc
 # Custom Aliases
 #
 # Allow aliases with sudo
-alias sudo='sudo '
+alias sudo='sudo EDITOR=/usr/bin/helix '
 
 # .dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
