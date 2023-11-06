@@ -46,8 +46,8 @@ exec swayidle -w timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
 # Lock screen with a custom script
 bindsym $mod+Shift+l exec ~/.config/sway/scripts/lockman.sh
 
-# Restart the display manager and kill kanshi on output toggle
-bindsym $mod+Shift+o exec "swaymsg output eDP-1 disable && sleep 1 && swaymsg output eDP-1 enable; pkill kanshi"
+# Activate all connected outputs
+bindsym $mod+Shift+o exec ~/.config/sway/scripts/activate_outputs.sh
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
