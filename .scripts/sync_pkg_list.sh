@@ -12,8 +12,8 @@ DOTFILES_GIT_DIR="$HOME/.dotfiles"
 GIT_WORK_TREE="$HOME"
 
 # Create the package lists
-pacman -Qqen > "$PKGLIST"
-pacman -Qqem > "$AURPKGLIST"
+pacman -Qqetn > "$PKGLIST"
+pacman -Qqetm > "$AURPKGLIST"
 
 # Perform git operations using the specific directories
 /usr/bin/git --git-dir="$DOTFILES_GIT_DIR" --work-tree="$GIT_WORK_TREE" add "$PKGLIST" "$AURPKGLIST"

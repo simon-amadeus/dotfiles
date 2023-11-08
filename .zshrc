@@ -24,9 +24,17 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Set default editor
+#
+# Set Default Applications
+#
+# Editor
 if command -v helix &> /dev/null; then
     export EDITOR='helix'
+fi
+
+# Browser
+if command -v firefox-developer-edition &> /dev/null; then
+    export BROWSER='firefox-developer-edition'
 fi
 
 # Custom prompt

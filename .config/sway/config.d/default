@@ -76,7 +76,7 @@ bindsym $mod+Shift+e exec $powermenu
 bindsym $mod+q kill
 
 # Start application launcher
-bindsym $mod+d exec $menu
+bindsym $mod+m exec $menu
 
 # Open the windows overlay
 bindsym $mod+p exec ~/.config/wofi/windows.py
