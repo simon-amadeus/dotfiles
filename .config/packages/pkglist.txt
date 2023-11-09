@@ -59,7 +59,6 @@ ttf-hack-nerd
 unzip
 waybar
 wget
-wireplumber
 wl-clipboard
 wofi
 xdg-utils
