@@ -96,3 +96,4 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 ## 1Password CLI
 #
 source /home/knowone/.config/op/plugins.sh
+

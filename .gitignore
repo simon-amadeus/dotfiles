@@ -13,6 +13,7 @@
 !/.config/bottom
 !/.config/Code/User/settings.json
 !/.config/git
+!/.config/gtk-3.0
 !/.config/helix
 !/.config/kanshi
 !/.config/nvim
@@ -29,4 +30,5 @@
 !/.ssh
 /.ssh/*
 !/.ssh/config
+
 

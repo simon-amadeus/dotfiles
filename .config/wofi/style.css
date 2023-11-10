@@ -4,7 +4,7 @@ Arc-Dark Color Scheme
 
 @define-color highlight #c300ff;
 @define-color base1  #404552;
-@define-color base2  #40455;
+@define-color base2  #2e2e2e;
 @define-color base3  #4b5160;
 
 *{
@@ -12,7 +12,7 @@ Arc-Dark Color Scheme
 }
 
 window {
-    border: 1px solid @highlight;
+    border: 2px solid @highlight;
 }
 
 #input {
@@ -29,7 +29,7 @@ window {
 }
 
 #outer-box {
-    margin: 5px;
+    margin: 2px;
     padding:15px;
     background-color: @base2;
 }
