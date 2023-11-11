@@ -1,0 +1,39 @@
+theme = "base16_transparent"
+
+[editor]
+auto-pairs = true
+scroll-lines = 4
+line-number = "relative"
+auto-format = true
+auto-info = true
+text-width = 80
+insert-final-newline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
+
+[editor.statusline]
+left = [ "mode", "spinner" ]
+center = [ "file-name" ]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
