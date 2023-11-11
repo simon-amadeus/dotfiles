@@ -44,4 +44,6 @@ for_window [app_id="firefoxdeveloperedition" title="Firefox — Sharing Indicato
 
 # Inhibit idle
 for_window [app_id="firefoxdeveloperedition"] inhibit_idle fullscreen
+for_window [class="firefoxdeveloperedition"] inhibit_idle fullscreen
 for_window [app_id="Chromium"] inhibit_idle fullscreen
+for_window [class="Chromium"] inhibit_idle fullscreen
