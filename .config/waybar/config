@@ -12,6 +12,7 @@
     ],
  
     "modules-center": [
+        "network#bandwidth",
     ],
 
     "modules-right": [
@@ -106,11 +107,19 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "   {signalStrength}%", // Icon: wifi
+        "format-wifi": "   {signalStrength}%", 
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ipaddr} | {essid} {frequency}",
         "on-click": "alacritty -e 'nmtui'",
+    },
+    "network#bandwidth": {
+        "interval": 3,
+        "format": "󰁅 {bandwidthDownBytes}    󰁝 {bandwidthUpBytes}", 
+        //"format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        //"format-disconnected": "⚠  Disconnected",
+        //"tooltip-format": "{ipaddr} | {essid} {frequency}",
+        "on-click": "alacritty -e 'btm'",
     },
     "network#vpn": {
         "interface": "tun0",
