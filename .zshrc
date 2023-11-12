@@ -48,6 +48,10 @@ source ~/.oh-my-zshrc
 #
 # Custom Aliases
 #
+# Wl-clipboard
+alias co='wl-copy'
+alias pa='wl-paste'
+
 # Allow aliases with sudo
 alias sudo='sudo EDITOR=/usr/bin/helix '
 

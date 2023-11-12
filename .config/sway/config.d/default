@@ -55,6 +55,12 @@ bindsym $mod+Shift+c reload
 # Power off the system
 bindsym $mod+Shift+p exec poweroff
 
+# Mount the latest connected usb device
+bindsym $mod+Shift+m exec "alacritty -e ~/.scripts/mount_latest_usb_device.sh"
+
+# Unmount a mounted device
+bindsym $mod+Shift+u exec "alacritty -e ~/.scripts/unmount_usb_device.sh"
+
 
 # Application Shortcuts
 # Launch File Manager in floating terminal
