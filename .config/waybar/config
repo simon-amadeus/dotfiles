@@ -51,11 +51,10 @@
 
     "clock": {
         "interval": 10,
-        "format": "{:%H:%M}",
-        "format-alt": "{:%e %b %Y (%R)}", // Icon: calendar-alt
+        "format": "{:%e %b %Y  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "year",
+                    "mode"          : "month",
                     "mode-mon-col"  : 3,
                     "weeks-pos"     : "left",
                     "on-scroll"     : 1,
@@ -72,8 +71,8 @@
                     "on-click-right": "mode",
                     "on-click-forward": "tz_up",
                     "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
+                    "on-scroll-up": "shift_down",
+                    "on-scroll-down": "shift_up"
                     }
 
     },
