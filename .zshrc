@@ -95,6 +95,10 @@ alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 export PATH="$PATH:/opt/flutter/bin"
 # Go
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+# Nix
+export PATH="$PATH:$HOME/.nix-profile/bin"
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
 
 #
 ## 1Password CLI

@@ -31,4 +31,6 @@
 /.ssh/*
 !/.ssh/config
 
-
+!/.vscode
+/.vscode/*
+!/.vscode/argv.json

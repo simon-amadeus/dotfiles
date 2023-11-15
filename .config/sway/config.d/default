@@ -70,7 +70,7 @@ bindsym $mod+n exec $term-float --command joshuto
 bindsym $mod+o exec firefox-developer-edition
 
 # Launch Visual Studio Code with disabled GPU acceleration
-bindsym $mod+c exec code --disable-gpu
+bindsym $mod+c exec code
 
 # Open a floating terminal
 bindsym $mod+Return exec $term-float
