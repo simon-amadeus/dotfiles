@@ -1,14 +1,20 @@
 #!/bin/sh
 
+swaymsg "reload"
+
+sleep 1
+
 swaymsg "output * power on"
 
 sleep 1
 
-swaymsg "output eDP-1 disable"
-swaymsg "output HDMI-1 disable"
+swaymsg "output * disable"
 
 sleep 1
 
-swaymsg "output eDP-1 enable"
-swaymsg "output HDMI-1 enable"
+swaymsg "output * enable"
+
+sleep 1
+
+swaymsg "reload"
 
