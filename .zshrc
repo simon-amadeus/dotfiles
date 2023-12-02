@@ -62,7 +62,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cat='bat'
 
 # Fix vscode lagging
-alias code='/usr/bin/code --disable-gpu'
+alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
 
 # duf (df alternative)
 alias df='duf'
