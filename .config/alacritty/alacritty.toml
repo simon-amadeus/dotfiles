@@ -1,0 +1,51 @@
+working_directory = "None"
+
+[colors]
+transparent_background_colors = true
+
+[colors.cursor]
+cursor = "#ff9900"
+
+[colors.normal]
+black = "#1d1f21"
+blue = "#0073ff"
+cyan = "#00fbff"
+green = "#12a802"
+magenta = "#ee00ff"
+red = "#db0226"
+white = "#c5c8c6"
+yellow = "#ffea00"
+
+[colors.primary]
+background = "#000000"
+foreground = "#c5c8c6"
+
+[colors.vi_mode_cursor]
+cursor = "#aa00ff"
+
+[cursor.style]
+shape = "Beam"
+
+[env]
+TERM = "alacritty"
+
+[font.normal]
+family = "Source Code Pro"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Command|Shift"
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.6
+
+[window.padding]
+x = 10
+y = 10
