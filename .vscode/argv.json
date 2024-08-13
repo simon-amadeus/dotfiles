@@ -17,6 +17,7 @@
 	// Unique id used for correlating crash reports sent from this instance.
 	// Do not edit this value.
 	"crash-reporter-id": "bd655731-f5b4-460f-9704-a8d24443b38e",
+	"password-store": "basic"
 
 	// Gnome Keyring integration
 	// Required for Copilot login to work

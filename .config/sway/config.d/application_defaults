@@ -1,11 +1,11 @@
 # Assign workspaces
-assign [class="Code"] 6
+assign [class="Code"] 1
 for_window [class="Code"] focus
 
-assign [app_id="firefoxdeveloperedition"] 6
+assign [app_id="firefoxdeveloperedition"] 1
 for_window [app_id="firefoxdeveloperedition"] focus
 
-assign [class="firefoxdeveloperedition"] 6
+assign [class="firefoxdeveloperedition"] 1
 for_window [class="firefoxdeveloperedition"] focus
 
 for_window [class="Spotify"] move window to workspace number 10
