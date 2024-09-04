@@ -1,12 +1,12 @@
 # Assign workspaces
-assign [class="Code"] 1
-for_window [class="Code"] focus
+#assign [class="Code"] 1
+#for_window [class="Code"] focus
 
-assign [app_id="firefoxdeveloperedition"] 1
-for_window [app_id="firefoxdeveloperedition"] focus
+#assign [app_id="firefoxdeveloperedition"] 1
+#for_window [app_id="firefoxdeveloperedition"] focus
 
-assign [class="firefoxdeveloperedition"] 1
-for_window [class="firefoxdeveloperedition"] focus
+#assign [class="firefoxdeveloperedition"] 1
+#for_window [class="firefoxdeveloperedition"] focus
 
 for_window [class="Spotify"] move window to workspace number 10
 
@@ -47,3 +47,5 @@ for_window [app_id="firefoxdeveloperedition"] inhibit_idle fullscreen
 for_window [class="firefoxdeveloperedition"] inhibit_idle fullscreen
 for_window [app_id="Chromium"] inhibit_idle fullscreen
 for_window [class="Chromium"] inhibit_idle fullscreen
+for_window [app_id="Mullvad Browser"] inhibit_idle fullscreen
+for_window [class="Mullvad Browser"] inhibit_idle fullscreen

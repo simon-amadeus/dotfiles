@@ -91,10 +91,8 @@ alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 #
 ## Custom Path
 #
-# Flutter
-export PATH="$PATH:/opt/flutter/bin"
 # Go
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+export PATH="$PATH$( [ -n "$(go env GOBIN)" ] && echo ":$(go env GOBIN)" ):$(go env GOPATH)/bin"
 # Nix
 export PATH="$PATH:$HOME/.nix-profile/bin"
 # Rust

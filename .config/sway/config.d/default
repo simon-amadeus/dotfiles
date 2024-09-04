@@ -67,7 +67,7 @@ bindsym $mod+Shift+u exec "alacritty -e ~/.scripts/unmount_usb_device.sh"
 bindsym $mod+n exec $term-float --command joshuto
 
 # Launch web browser
-bindsym $mod+o exec firefox-developer-edition
+bindsym $mod+o exec MOZ_ENABLE_WAYLAND=1 mullvad-browser
 
 # Launch Visual Studio Code with disabled GPU acceleration
 bindsym $mod+c exec code --disable-gpu
