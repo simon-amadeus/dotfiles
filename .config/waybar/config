@@ -17,7 +17,7 @@
 
     "modules-right": [
         "idle_inhibitor",
-        "network#vpn",
+        "custom/vpn",
         "network",
         "memory",
         "cpu",
@@ -121,12 +121,14 @@
         //"tooltip-format": "{ipaddr} | {essid} {frequency}",
         "on-click": "alacritty -e 'btm'",
     },
-    "network#vpn": {
-        "interface": "tun0",
-        "format": "✔ VPN",
-        "format-disconnected": "⚠  No VPN",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    },
+    
+    "custom/vpn": {
+    "exec": "/home/knowone/.config/waybar/scripts/vpn.sh",
+    "interval": 5,
+    "return-type": "json",
+    "on-click": "mullvad-vpn",
+},
+
 
     "sway/window": {
         "format": "{}",

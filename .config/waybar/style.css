@@ -71,6 +71,7 @@ Arc-Dark Color Scheme
 #mode,
 #custom-weather,
 #network,
+#custom-vpn,
 #pulseaudio,
 #temperature,
 #tray,
@@ -143,6 +144,10 @@ Arc-Dark Color Scheme
 }
 
 #network.disconnected {
+    color: orange;
+}
+
+#custom-vpn.disconnected {
     color: orange;
 }
 
