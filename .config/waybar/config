@@ -17,6 +17,7 @@
 
     "modules-right": [
         "idle_inhibitor",
+        "network#vpn",
         "network",
         "memory",
         "cpu",
@@ -122,8 +123,8 @@
     },
     "network#vpn": {
         "interface": "tun0",
-        "format": "  {essid} ({signalStrength}%)",
-        "format-disconnected": "⚠  Disconnected",
+        "format": "✔ VPN",
+        "format-disconnected": "⚠  No VPN",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
 
