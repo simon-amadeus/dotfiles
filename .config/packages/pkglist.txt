@@ -1,4 +1,5 @@
 alacritty
+archiso
 arp-scan
 base
 base-devel
@@ -25,6 +26,7 @@ dust
 fd
 feh
 firefox-developer-edition
+firejail
 firewalld
 git
 gnome-keyring
@@ -52,7 +54,7 @@ mpv
 mtr
 neovim
 ninja
-npm
+nix
 openssh
 pavucontrol
 pipewire
@@ -62,6 +64,7 @@ pipewire-pulse
 polkit-gnome
 python-pip
 ripgrep
+rkhunter
 rpi-imager
 rsync
 rtkit
@@ -74,7 +77,8 @@ swaybg
 swayidle
 swaylock
 systemd-resolvconf
-terraform
+tcpdump
+termshark
 traceroute
 ttf-hack-nerd
 udisks2
