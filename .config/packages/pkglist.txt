@@ -93,3 +93,5 @@ wofi
 xdg-utils
 xorg-xwayland
 zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
