@@ -1,16 +1,25 @@
-# Lines configured by zsh-newuser-install
+# History Configuration
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt share_history
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt extended_history
+
+# Key Bindings
 bindkey -e
-# End of lines configured by zsh-newuser-install
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
-# Include hidden files in substring completion
-#setopt globdots
+# Enable and configure completion
+autoload -Uz compinit
+compinit -C
 
-# The following lines were added by compinstall
 zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate _ignored
-zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-colors "no=00;37:fi=00;37:di=01;34:ln=01;36:pi=33:so=35:bd=33:cd=33:or=31:mi=05;37;41"
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 zstyle ':completion:*' file-patterns '%p(D):globbed-files *(D-/):directories' '*(D):all-files'
 zstyle ':completion:*' menu select=long
@@ -20,90 +29,47 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.cache/zsh/.zcompcache"
 zstyle :compinstall filename "$HOME/.zshrc"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-#
 # Set Default Applications
-#
-# Editor
 if command -v helix &> /dev/null; then
     export EDITOR='helix'
 fi
-
-# Browser
 if command -v firefox-developer-edition &> /dev/null; then
     export BROWSER='firefox-developer-edition'
 fi
 
-# Custom prompt
+# Custom Prompt
 ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
 
-
-#
-# Custom Aliases
-#
-# Wl-clipboard
+# Aliases and Functions
 alias co='wl-copy'
 alias pa='wl-paste'
-
-# Allow aliases with sudo
-alias sudo='sudo EDITOR=/usr/bin/helix '
-
-# .dotfiles
+function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# bat (cat alternative)
 alias cat='bat'
-
-# Fix vscode lagging
 alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
-
-# duf (df alternative)
 alias df='duf'
-
-# dust (du alternative)
 alias du='dust'
-
-# bottom (htop alternative)
 alias htop='btm'
-
-# feh (image viewer)
 alias feh='feh --scale-down'
-
-# helix (editor)
 alias hx='helix'
-
-# joshuto (file manager)
 alias files='joshuto'
-
-# lsd (ls alternative)
 alias ls='lsd'
 alias l='lsd -la'
-
-# Insights Client
 alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 
-#
-## Custom Path
-#
-# Go
-export PATH="$PATH$( [ -n "$(go env GOBIN)" ] && echo ":$(go env GOBIN)" ):$(go env GOPATH)/bin"
-# Nix
-export PATH="$PATH:$HOME/.nix-profile/bin"
-# Rust
-export PATH="$PATH:$HOME/.cargo/bin"
+# Custom Path
+typeset -U path
+path+=("$(go env GOBIN)")
+path+=("$(go env GOPATH)/bin")
+path+=("$HOME/.nix-profile/bin")
+path+=("$HOME/.cargo/bin")
+export PATH
 
-#
-## 1Password CLI
-#
+# 1Password CLI
 source /home/knowone/.config/op/plugins.sh
 
-#
-## Place add the end
-#
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Plugins
+[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
