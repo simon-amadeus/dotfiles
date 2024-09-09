@@ -1,3 +1,2 @@
-export GTK_THEME="Adwaita:dark"
-
-. "$HOME/.cargo/env"
+# Rust
+source "$HOME/.cargo/env"

@@ -1,4 +1,6 @@
-# History Configuration
+#
+## History Configuration
+#
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
@@ -9,12 +11,18 @@ setopt hist_reduce_blanks
 setopt hist_verify
 setopt extended_history
 
-# Key Bindings
+
+#
+## Key Bindings
+#
 bindkey -e
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
-# Enable and configure completion
+
+#
+## Enable and configure completion
+#
 autoload -Uz compinit
 compinit -C
 
@@ -29,7 +37,10 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.cache/zsh/.zcompcache"
 zstyle :compinstall filename "$HOME/.zshrc"
 
-# Set Default Applications
+
+#
+## Set Default Applications
+#
 if command -v helix &> /dev/null; then
     export EDITOR='helix'
 fi
@@ -37,28 +48,37 @@ if command -v firefox-developer-edition &> /dev/null; then
     export BROWSER='firefox-developer-edition'
 fi
 
-# Custom Prompt
+
+#
+## Custom Prompt
+#
 ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
 
-# Aliases and Functions
-alias co='wl-copy'
-alias pa='wl-paste'
-function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias cat='bat'
-alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
-alias df='duf'
-alias du='dust'
-alias htop='btm'
-alias feh='feh --scale-down'
-alias hx='helix'
-alias files='joshuto'
-alias ls='lsd'
-alias l='lsd -la'
-alias insights="$HOME/.flutter-bin/insights-client/insights_client"
 
-# Custom Path
+#
+## Aliases and Functions
+#
+command -v bat &>/dev/null && alias cat='bat'
+command -v btm &>/dev/null && alias htop='btm'
+command -v code &>/dev/null && alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
+command -v git &>/dev/null && alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+command -v duf &>/dev/null && alias df='duf'
+command -v dust &>/dev/null && alias du='dust'
+command -v feh &>/dev/null && alias feh='feh --scale-down'
+command -v helix &>/dev/null && alias hx='helix'
+command -v joshuto &>/dev/null && alias files='joshuto'
+command -v lsd &>/dev/null && alias ls='lsd'
+command -v lsd &>/dev/null && alias l='lsd -la'
+command -v wl-copy &>/dev/null && alias co='wl-copy'
+command -v wl-paste &>/dev/null && alias pa='wl-paste'
+
+function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
+
+
+#
+## Custom Path
+#
 typeset -U path
 path+=("$(go env GOBIN)")
 path+=("$(go env GOPATH)/bin")
@@ -66,10 +86,25 @@ path+=("$HOME/.nix-profile/bin")
 path+=("$HOME/.cargo/bin")
 export PATH
 
-# 1Password CLI
+
+#
+## 1Password CLI
+#
 source /home/knowone/.config/op/plugins.sh
 
-# Plugins
-[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#
+## ZSH Plugins
+#
+load_plugin() {
+    local plugin=$1
+    if [[ -f /usr/share/zsh/plugins/$plugin/$plugin.zsh ]]; then
+        source /usr/share/zsh/plugins/$plugin/$plugin.zsh &
+    else
+        echo "Error: Plugin $plugin not found"
+    fi
+}
+
+load_plugin zsh-autosuggestions
+load_plugin zsh-syntax-highlighting
+wait  # Wait for all plugins to load in the background
