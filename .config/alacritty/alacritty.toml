@@ -6,36 +6,47 @@ transparent_background_colors = true
 [colors.cursor]
 cursor = "#ff9900"
 
+[colors.vi_mode_cursor]
+cursor = "#aa00ff"
+
 [colors.normal]
 black = "#1d1f21"
-blue = "#0073ff"
-cyan = "#00fbff"
-green = "#12a802"
-magenta = "#ee00ff"
 red = "#db0226"
-white = "#c5c8c6"
+green = "#12a802"
 yellow = "#ffea00"
+blue = "#0073ff"
+magenta = "#ee00ff"
+cyan = "#00fbff"
+white = "#c5c8c6"
 
 [colors.primary]
 background = "#000000"
 foreground = "#c5c8c6"
 
-[colors.vi_mode_cursor]
-cursor = "#aa00ff"
+[cursor]
+style = "Beam"
+unfocused_hollow = true  # Makes the cursor hollow when the terminal is unfocused
 
-[cursor.style]
-shape = "Beam"
-
-[env]
-TERM = "alacritty"
-
-[font.normal]
-family = "Source Code Pro"
+[font]
+normal = { family = "Source Code Pro", style = "Regular" }
+bold = { family = "Source Code Pro", style = "Bold" }
+italic = { family = "Source Code Pro", style = "Italic" }
+size = 12.0  # Default size can be adjusted to your preference
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "Return"
 mods = "Command|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
 
 [mouse]
 hide_when_typing = true
@@ -45,8 +56,8 @@ save_to_clipboard = true
 
 [window]
 opacity = 0.6
+dynamic_title = true  # Enables dynamic title based on the current command running
 
 [window.padding]
 x = 10
 y = 10
-

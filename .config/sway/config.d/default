@@ -1,118 +1,62 @@
 ### Sway Configuration File
 
 ## Variables
-# Set Mod key to Mod4 (typically the Super key)
 set $mod Mod4
-
-# Set floating terminal to alacritty
 set $term-float alacritty
-
-# Set application launcher command
 set $menu wofi -c ~/.config/wofi/config -I
-
-# Set power menu script path
 set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
-## Audio
-# Get the current sink volume
+## Audio Commands
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | awk '{print $5}' | tr -d '%'
-
-# Get the current source volume
 set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | awk '{print $5}' | tr -d '%'
-
-# Decrease sink volume by 5%
 set $volume_down pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume
-
-# Increase sink volume by 5%
 set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume
-
-# Toggle sink mute status
 set $volume_mute pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'yes' && echo 0 || $sink_volume
-
-# Toggle source mute status
 set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo 0 || $source_volume
 
+## Idle and Lock Screen
+exec swayidle -w \
+    timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -C ~/.config/swaylock/config'
 
-# Idle
-exec swayidle -w timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
-             timeout 600 'swaymsg "output * dpms off"' \
-             resume 'swaymsg "output * dpms on"' \
-             before-sleep 'swaylock -C ~/.config/swaylock/config'
+## Key Bindings
 
-
-# Key Bindings
-
-# System Controls
-# Lock screen with a custom script
+### System Controls
 bindsym $mod+Shift+l exec ~/.config/sway/scripts/lockman.sh
-
-# Activate all connected outputs
 bindsym $mod+Shift+o exec ~/.config/sway/scripts/activate_outputs.sh
-
-# Reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Power off the system
 bindsym $mod+Shift+p exec poweroff
-
-# Mount the latest connected usb device
 bindsym $mod+Shift+m exec "alacritty -e ~/.scripts/mount_latest_usb_device.sh"
-
-# Unmount a mounted device
 bindsym $mod+Shift+u exec "alacritty -e ~/.scripts/unmount_usb_device.sh"
 
-
-# Application Shortcuts
-# Launch File Manager in floating terminal
+### Application Shortcuts
 bindsym $mod+n exec $term-float --command joshuto
-
-# Launch web browser
 bindsym $mod+o exec MOZ_ENABLE_WAYLAND=1 mullvad-browser
-
-# Launch Visual Studio Code with disabled GPU acceleration
 bindsym $mod+c exec code --disable-gpu
-
-# Open a floating terminal
 bindsym $mod+Return exec $term-float
-
-# Open the power menu
 bindsym $mod+Shift+e exec $powermenu
-
-# Kill the focused window
 bindsym $mod+q kill
-
-# Start application launcher
 bindsym $mod+m exec $menu
-
-# Open the windows overlay
 bindsym $mod+p exec ~/.config/wofi/windows.py
 
-
-# Window Management
-# Set modifier for floating window management
+### Window Management
 floating_modifier $mod normal
 
-# Focus Management
-# Focus the window to the left
+### Focus Management
 bindsym $mod+Left focus left
-
-# Focus the window to the down
 bindsym $mod+Down focus down
-
-# Focus the window to the up
 bindsym $mod+Up focus up
-
-# Focus the window to the right
 bindsym $mod+Right focus right
 
-
-# Window Moving
+### Window Moving
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Workspaces
+### Workspaces
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -124,7 +68,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# Move focused container to workspace
+### Move Focused Container to Workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -136,8 +80,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-
-# Layout Shortcuts
+### Layout Shortcuts
 bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+s layout stacking
@@ -148,42 +91,35 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
-# Scratchpad
+### Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# Resize Mode
-# Enter resize mode with keybindings for window resizing
+### Resize Mode
 mode "resize" {
-    # Resize window width
     bindsym Left resize shrink width 10px
     bindsym Right resize grow width 10px
-    # Resize window height
     bindsym Up resize shrink height 10px
     bindsym Down resize grow height 10px
-    # Exit resize mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-# Enter resize mode
 bindsym $mod+r mode "resize"
 
-# Audio Controls
+### Audio Controls
 bindsym XF86AudioRaiseVolume exec $volume_up
 bindsym XF86AudioLowerVolume exec $volume_down
 bindsym XF86AudioMute exec $volume_mute
 bindsym XF86AudioMicMute exec $mic_mute
 
-# Backlight
+### Backlight Controls
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
 
-# Media Controls
+### Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Screenshot
-# Take a screenshot and copy to clipboard
+### Screenshot
 bindsym --release $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
-

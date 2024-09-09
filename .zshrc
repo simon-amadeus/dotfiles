@@ -99,7 +99,7 @@ source /home/knowone/.config/op/plugins.sh
 load_plugin() {
     local plugin=$1
     if [[ -f /usr/share/zsh/plugins/$plugin/$plugin.zsh ]]; then
-        source /usr/share/zsh/plugins/$plugin/$plugin.zsh &
+        source /usr/share/zsh/plugins/$plugin/$plugin.zsh
     else
         echo "Error: Plugin $plugin not found"
     fi
