@@ -36,7 +36,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-icons": [" ", " ", " ", " ", " "]
@@ -71,7 +71,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "󰓅  {usage}% ({load})",
+        "format": "󰓅   {usage}% ({load})",
         "states": {
             "warning": 70,
             "critical": 90
@@ -81,7 +81,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "󰍛 {}%",
+        "format": "󰍛  {}%",
         "on-click": "alacritty -e 'htop'",
         "states": {
             "warning": 70,
@@ -91,7 +91,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "   {signalStrength}%",
+        "format-wifi": "    {signalStrength}%",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ipaddr} | {essid} {frequency}",
