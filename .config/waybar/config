@@ -1,20 +1,16 @@
-// Global 
 {
+    // Global Settings
     "layer": "top",
     "position": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
     "height": 30,
 
     "modules-left": [
         "sway/workspaces",
-        "sway/window",
+        "sway/window"
     ],
- 
     "modules-center": [
-        "network#bandwidth",
+        "network#bandwidth"
     ],
-
     "modules-right": [
         "idle_inhibitor",
         "custom/vpn",
@@ -26,11 +22,10 @@
         "clock"
     ],
 
-    // Modules
-
+    // Module Settings
     "idle_inhibitor": {
         "format": "{icon} ",
-        "format-icons":{
+        "format-icons": {
             "activated": "",
             "deactivated": ""
         }
@@ -38,16 +33,13 @@
 
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
     },
 
     "clock": {
@@ -55,50 +47,42 @@
         "format": "{:%e %b %Y  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "month",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "left",
-                    "on-scroll"     : 1,
-                    "on-click-right": "mode",
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#c300ff'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#03d3fc'><b>{}</b></span>",
-                              "today":      "<span color='#ff9900'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_down",
-                    "on-scroll-down": "shift_up"
-                    }
-
-    },
-
-    "clock: calendar": {
-        "mode": "month",
-        "week-pos": "left",
-        "on-scroll": 1
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#c300ff'><b>W{}</b></span>",
+                "weekdays": "<span color='#03d3fc'><b>{}</b></span>",
+                "today": "<span color='#ff9900'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
     },
 
     "cpu": {
         "interval": 5,
-        "format": "󰓅  {usage}% ({load})", // Icon: microchip
+        "format": "󰓅  {usage}% ({load})",
         "states": {
             "warning": 70,
-            "critical": 90,
+            "critical": 90
         },
-        "on-click": "alacritty -e 'htop'",
+        "on-click": "alacritty -e 'htop'"
     },
-
 
     "memory": {
         "interval": 5,
-        "format": "󰍛  {}%", // Icon: memory
-        "on-click": "alacritty -e 'htop'", 
+        "format": "󰍛 {}%",
+        "on-click": "alacritty -e 'htop'",
         "states": {
             "warning": 70,
             "critical": 90
@@ -107,28 +91,25 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "   {signalStrength}%", 
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
+        "format-wifi": "   {signalStrength}%",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ipaddr} | {essid} {frequency}",
-        "on-click": "alacritty -e 'nmtui'",
+        "on-click": "alacritty -e 'nmtui'"
     },
+
     "network#bandwidth": {
         "interval": 3,
-        "format": "󰁅 {bandwidthDownBytes}    󰁝 {bandwidthUpBytes}", 
-        //"format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        //"format-disconnected": "⚠  Disconnected",
-        //"tooltip-format": "{ipaddr} | {essid} {frequency}",
-        "on-click": "alacritty -e 'btm'",
+        "format": "󰁅 {bandwidthDownBytes}  󰁝 {bandwidthUpBytes}",
+        "on-click": "alacritty -e 'btm'"
     },
-    
-    "custom/vpn": {
-    "exec": "/home/knowone/.config/waybar/scripts/vpn.sh",
-    "interval": 5,
-    "return-type": "json",
-    "on-click": "mullvad-vpn",
-},
 
+    "custom/vpn": {
+        "exec": "/home/knowone/.config/waybar/scripts/vpn.sh",
+        "interval": 5,
+        "return-type": "json",
+        "on-click": "mullvad-vpn"
+    },
 
     "sway/window": {
         "format": "{}",
@@ -137,20 +118,16 @@
 
     "sway/workspaces": {
         "disable-scroll": true,
-        "disable-markup" : false,
+        "disable-markup": false,
         "all-outputs": true,
         "format": "{icon}",
-        //"format":"{icon}",
         "format-icons": {
-            //"1": "",
-            //"6": "",
-            //"3": "",
-            "10": "",
+            "10": ""
         }
     },
 
     "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
+        "scroll-step": 1,
         "format": "{icon} {volume}%",
         "format-bluetooth": " {icon} {volume}% {format_source}",
         "format-bluetooth-muted": " 󰓄 {format_source}",
@@ -168,7 +145,7 @@
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
     },
 
     "backlight#icon": {
@@ -178,9 +155,9 @@
         "on-scroll-up": "brightnessctl -c backlight set +1%"
     },
 
-    "backlight#value" :{
-         "format": "{percent}%",
-         "on-scroll-down": "brightnessctl -c backlight set 1%-",
-         "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
+    "backlight#value": {
+        "format": "{percent}%",
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    }
 }

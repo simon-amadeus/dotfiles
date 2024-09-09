@@ -1,26 +1,20 @@
 /* =============================================================================
- *
  * Waybar configuration
- *
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
  * =========================================================================== */
 
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-/*
-Arc-Dark Color Scheme
-*/
-@define-color highlight #5294e2 ;
-@define-color base1  #404552 ;
+/* Color Scheme: Arc-Dark */
+@define-color highlight #5294e2;
+@define-color base1 #404552;
 
 @keyframes blink-warning {
     70% {
         color: white;
     }
-
     to {
         color: white;
         background-color: orange;
@@ -29,9 +23,8 @@ Arc-Dark Color Scheme
 
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
-
     to {
         color: white;
         background-color: red;
@@ -51,17 +44,15 @@ Arc-Dark Color Scheme
     padding: 0;
 }
 
-/* The whole bar */
+/* Waybar container */
 #waybar {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
     color: #bebebe;
-    /*background-color: @base1;*/
-    background-color: rgba(0,0,0,0.6);
     font-family: UbuntuMono;
     font-size: 12px;
 }
 
-/* Every modules */
+/* General module styles */
 #battery,
 #clock,
 #backlight,
@@ -77,14 +68,16 @@ Arc-Dark Color Scheme
 #tray,
 #idle_inhibitor,
 #custom-PBPbattery {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+    padding: 0.5rem 0.6rem;
+    margin: 1px 0;
 }
 
+
 /* -----------------------------------------------------------------------------
- * Modules styles
+ * Module-specific styles
  * -------------------------------------------------------------------------- */
 
+/* Battery styles */
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -109,6 +102,7 @@ Arc-Dark Color Scheme
     animation-duration: 2s;
 }
 
+/* CPU styles */
 #cpu.warning {
     color: orange;
 }
@@ -117,6 +111,7 @@ Arc-Dark Color Scheme
     color: red;
 }
 
+/* Memory styles */
 #memory {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -125,63 +120,64 @@ Arc-Dark Color Scheme
 
 #memory.warning {
     color: orange;
- }
+}
 
 #memory.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
+    padding: 0 5px;
 }
 
+/* Mode styles */
 #mode {
     background: @highlight;
-    border-bottom: 3px transparent;
-    color:white;
+    border-bottom: 3px solid transparent;
+    color: white;
     margin-left: 5px;
     padding: 7px;
 }
 
-#network.disconnected {
-    color: orange;
-}
-
+/* Network styles */
+#network.disconnected,
 #custom-vpn.disconnected {
     color: orange;
 }
 
+/* Pulseaudio styles */
 #pulseaudio {
-    padding-top:6px;
+    padding-top: 6px;
 }
 
 #pulseaudio.muted {
     color: @highlight;
 }
 
+/* Temperature styles */
 #temperature.critical {
     color: red;
 }
 
+/* Window and workspace styles */
 #window {
     min-height: 20px;
     font-weight: bold;
 }
 
 #workspaces {
-    font-size:12px;
+    font-size: 12px;
 }
 
 #workspaces button {
     border-bottom: 3px solid transparent;
-    margin-bottom: 0px;
-    padding:0px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 #workspaces button.focused {
-    border-bottom: 3px solid  @highlight;
+    border-bottom: 3px solid @highlight;
     margin-bottom: 1px;
-    padding-left:0;
+    padding-left: 0;
     color: white;
 }
 
@@ -189,19 +185,16 @@ Arc-Dark Color Scheme
     border-color: #c9545d;
 }
 
-#custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:15px;
-}
-
+/* Custom styles */
+#custom-power,
 #custom-launcher {
-    font-size:15px;
-    margin-left:15px;
-    margin-right:10px;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 
+/* Backlight styles */
 #backlight.icon {
-    padding-right:1px;
+    padding-right: 1px;
     font-size: 13px;
 }
