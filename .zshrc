@@ -41,9 +41,6 @@ fi
 ZLE_RPROMPT_INDENT=0
 eval "$(starship init zsh)"
 
-# Oh-my-zsh
-source ~/.oh-my-zshrc
-
 
 #
 # Custom Aliases
@@ -84,6 +81,7 @@ alias files='joshuto'
 
 # lsd (ls alternative)
 alias ls='lsd'
+alias l='lsd -la'
 
 # Insights Client
 alias insights="$HOME/.flutter-bin/insights-client/insights_client"
@@ -102,4 +100,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 ## 1Password CLI
 #
 source /home/knowone/.config/op/plugins.sh
+
+#
+## Place add the end
+#
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
