@@ -5,11 +5,13 @@ base
 base-devel
 bat
 bind
+blackarch-keyring
 blueman
 bluez
 bluez-utils
 bottom
 brightnessctl
+chkrootkit
 chromium
 clang
 cmake
@@ -40,6 +42,7 @@ htop
 intel-ucode
 iw
 iwd
+john
 jq
 kanshi
 linux-firmware
@@ -53,9 +56,13 @@ mat2
 mpv
 mtr
 neovim
+netdiscover
 ninja
 nix
+nmap
 openssh
+paru
+paru-debug
 pavucontrol
 pipewire
 pipewire-alsa
@@ -87,7 +94,9 @@ vim
 waybar
 websocat
 wget
+whois
 wireplumber
+wireshark-qt
 wl-clipboard
 wofi
 xdg-utils

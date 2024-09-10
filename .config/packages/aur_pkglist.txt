@@ -2,7 +2,5 @@
 joshuto-bin
 mullvad-browser-bin
 mullvad-vpn-bin
-paru
-paru-debug
 slack-desktop
 visual-studio-code-bin
