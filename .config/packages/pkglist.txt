@@ -42,7 +42,6 @@ htop
 intel-ucode
 iw
 iwd
-john
 jq
 kanshi
 linux-firmware
@@ -55,13 +54,11 @@ man-pages
 mat2
 mpv
 mtr
+neofetch
 neovim
-netdiscover
 ninja
 nix
-nmap
 openssh
-paru
 paru-debug
 pavucontrol
 pipewire
@@ -94,9 +91,7 @@ vim
 waybar
 websocat
 wget
-whois
 wireplumber
-wireshark-qt
 wl-clipboard
 wofi
 xdg-utils
