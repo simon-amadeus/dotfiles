@@ -3,7 +3,6 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-
     "modules-left": [
         "sway/workspaces",
         "sway/window"
@@ -21,7 +20,6 @@
         "battery",
         "clock"
     ],
-
     // Module Settings
     "idle_inhibitor": {
         "format": "{icon} ",
@@ -30,18 +28,22 @@
             "deactivated": ""
         }
     },
-
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "clock": {
         "interval": 10,
         "format": "{:%e %b %Y  %H:%M}",
@@ -68,54 +70,47 @@
             "on-scroll-down": "shift_up"
         }
     },
-
     "cpu": {
         "interval": 5,
-        "format": "󰓅   {usage}% ({load})",
+        "format": "󰓅 {usage}% ({load})",
         "states": {
             "warning": 70,
             "critical": 90
         },
         "on-click": "alacritty -e 'htop'"
     },
-
     "memory": {
         "interval": 5,
-        "format": "󰍛  {}%",
+        "format": "󰍛 {}%",
         "on-click": "alacritty -e 'htop'",
         "states": {
             "warning": 70,
             "critical": 90
         }
     },
-
     "network": {
         "interval": 5,
-        "format-wifi": "    {signalStrength}%",
+        "format-wifi": "  {signalStrength}%",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ipaddr} | {essid} {frequency}",
         "on-click": "alacritty -e 'nmtui'"
     },
-
     "network#bandwidth": {
         "interval": 3,
-        "format": "󰁅 {bandwidthDownBytes}  󰁝 {bandwidthUpBytes}",
+        "format": "󰁅 {bandwidthDownBytes} 󰁝 {bandwidthUpBytes}",
         "on-click": "alacritty -e 'btm'"
     },
-
     "custom/vpn": {
         "exec": "/home/knowone/.config/waybar/scripts/vpn.sh",
         "interval": 5,
         "return-type": "json",
         "on-click": "mullvad-vpn"
     },
-
     "sway/window": {
         "format": "{}",
         "max-length": 120
     },
-
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-markup": false,
@@ -125,7 +120,6 @@
             "10": ""
         }
     },
-
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}%",
@@ -141,20 +135,22 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["󰓃"]
+            "default": [
+                "󰓃"
+            ]
         },
         "on-click": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
     },
-
     "backlight#icon": {
         "format": "{icon}",
-        "format-icons": [""],
+        "format-icons": [
+            ""
+        ],
         "on-scroll-down": "brightnessctl -c backlight set 1%-",
         "on-scroll-up": "brightnessctl -c backlight set +1%"
     },
-
     "backlight#value": {
         "format": "{percent}%",
         "on-scroll-down": "brightnessctl -c backlight set 1%-",

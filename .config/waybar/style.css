@@ -15,6 +15,7 @@
     70% {
         color: white;
     }
+
     to {
         color: white;
         background-color: orange;
@@ -25,6 +26,7 @@
     70% {
         color: white;
     }
+
     to {
         color: white;
         background-color: red;
@@ -37,10 +39,9 @@
 
 /* Reset all styles */
 * {
-    border: none;
     border-radius: 0;
     min-height: 0;
-    margin: 1px;
+    margin: 0;
     padding: 0;
 }
 
@@ -48,8 +49,8 @@
 #waybar {
     background: rgba(0, 0, 0, 0.6);
     color: #bebebe;
-    font-family: UbuntuMono;
-    font-size: 12px;
+    font-family: Source Code Pro, sans-serif;
+    font-size: 13px;
 }
 
 /* General module styles */
@@ -103,11 +104,21 @@
 }
 
 /* CPU styles */
+#cpu {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #cpu.warning {
+    animation-name: blink-warning;
+    animation-duration: 3s;
     color: orange;
 }
 
 #cpu.critical {
+    animation-name: blink-critical;
+    animation-duration: 2s;
     color: red;
 }
 
@@ -119,13 +130,15 @@
 }
 
 #memory.warning {
+    animation-name: blink-warning;
+    animation-duration: 3s;
     color: orange;
 }
 
 #memory.critical {
-    color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
+    color: red;
     padding: 0 5px;
 }
 
@@ -160,25 +173,18 @@
 
 /* Window and workspace styles */
 #window {
-    min-height: 20px;
+    padding: 0.5rem 0.6rem;
     font-weight: bold;
 }
 
-#workspaces {
-    font-size: 12px;
-}
+#workspaces {}
 
 #workspaces button {
     border-bottom: 3px solid transparent;
-    margin-bottom: 0;
-    padding: 0;
 }
 
 #workspaces button.focused {
     border-bottom: 3px solid @highlight;
-    margin-bottom: 1px;
-    padding-left: 0;
-    color: white;
 }
 
 #workspaces button.urgent {
