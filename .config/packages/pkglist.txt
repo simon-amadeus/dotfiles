@@ -93,6 +93,7 @@ websocat
 wget
 wireplumber
 wl-clipboard
+wlsunset
 wofi
 xdg-utils
 xorg-xwayland
