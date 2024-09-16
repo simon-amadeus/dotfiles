@@ -12,3 +12,5 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 # Password Manager
 exec 1password --silent
 
+# Night Shift
+exec wl -l 50.10 -L 14.44
