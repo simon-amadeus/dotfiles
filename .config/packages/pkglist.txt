@@ -59,6 +59,7 @@ neovim
 ninja
 nix
 openssh
+paru
 paru-debug
 pavucontrol
 pipewire
