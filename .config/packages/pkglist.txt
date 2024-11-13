@@ -59,6 +59,7 @@ neovim
 ninja
 nix
 openssh
+pandoc-cli
 paru
 paru-debug
 pavucontrol
@@ -84,6 +85,10 @@ swaylock
 systemd-resolvconf
 tcpdump
 termshark
+texlive-fontsrecommended
+texlive-latex
+texlive-latexrecommended
+tldr
 traceroute
 ttf-hack-nerd
 udisks2
