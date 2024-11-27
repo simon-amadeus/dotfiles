@@ -87,7 +87,9 @@ tcpdump
 termshark
 texlive-fontsrecommended
 texlive-latex
+texlive-latexextra
 texlive-latexrecommended
+texlive-xetex
 tldr
 traceroute
 ttf-hack-nerd
