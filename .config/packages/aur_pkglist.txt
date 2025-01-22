@@ -1,4 +1,6 @@
 1password
+android-studio
+flutter
 joshuto-bin
 mullvad-browser-bin
 mullvad-vpn-bin
