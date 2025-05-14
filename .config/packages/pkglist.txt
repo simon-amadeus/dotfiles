@@ -59,7 +59,6 @@ neovim
 ninja
 nix
 openssh
-pandoc-cli
 paru
 paru-debug
 pavucontrol
