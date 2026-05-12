@@ -1,17 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-# Get Mullvad VPN status and escape double quotes
-STATUS=$(/usr/bin/mullvad status | /usr/bin/sed 's/\"/\\\"/g')
+STATUS=$(mullvad status)
+TOOLTIP=$(printf '%s' "$STATUS" | sed 's/"/\\"/g' | tr '\n' ' ' | sed 's/ $//')
 
-# Replace newline characters with '\n' for JSON formatting
-FORMATTED_STATUS=$(echo "$STATUS" | /usr/bin/sed ':a;N;$!ba;s/\n/\\n/g')
-
-# Create JSON output based on VPN status
-if echo "$STATUS" | /usr/bin/grep -q 'Connected'; then
-    OUTPUT="{\"tooltip\": \"$FORMATTED_STATUS\", \"text\": \"✔ VPN\"}"
+if printf '%s' "$STATUS" | grep -q 'Connected'; then
+    printf '{"tooltip":"%s","text":"󰌾  VPN","class":"connected"}\n' "$TOOLTIP"
 else
-    OUTPUT="{\"tooltip\": \"$FORMATTED_STATUS\", \"text\": \"⚠ No VPN\", \"class\": \"disconnected\"}"
+    printf '{"tooltip":"%s","text":"󰌿  No VPN","class":"disconnected"}\n' "$TOOLTIP"
 fi
-
-echo "$OUTPUT"
-

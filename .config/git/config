@@ -24,6 +24,10 @@
 
 [diff]
 	algorithm = histogram
+	colorMoved = default
+
+[merge]
+	conflictstyle = zdiff3
 
 [init]
 	defaultBranch = trunk

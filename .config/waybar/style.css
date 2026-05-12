@@ -1,33 +1,18 @@
 @define-color highlight #c300ff;
-@define-color base1 #1a1a2e;
+@define-color bg       rgba(0, 0, 0, 0.6);
 
 @keyframes blink-warning {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: orange;
-    }
+    70% { color: white; }
+    to   { color: white; background-color: orange; }
 }
 
 @keyframes blink-critical {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: red;
-    }
+    70% { color: white; }
+    to   { color: white; background-color: red; }
 }
 
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
+/* ── Reset ─────────────────────────────────────────────────────────────── */
 
-/* Reset all styles */
 * {
     border-radius: 0;
     min-height: 0;
@@ -35,162 +20,128 @@
     padding: 0;
 }
 
-/* Waybar container */
+/* ── Bar base ───────────────────────────────────────────────────────────── */
+
 #waybar {
-    background: rgba(0, 0, 0, 0.6);
+    background: @bg;
     color: #bebebe;
     font-family: "SauceCodePro Nerd Font", sans-serif;
     font-size: 13px;
 }
 
-/* General module styles */
+/* ── Shared module padding ──────────────────────────────────────────────── */
+
 #battery,
 #clock,
-#backlight,
 #cpu,
-#custom-keyboard-layout,
+#custom-vpn,
+#idle_inhibitor,
 #memory,
 #mode,
-#custom-weather,
 #network,
-#custom-vpn,
 #pulseaudio,
-#temperature,
-#tray,
-#idle_inhibitor,
-#custom-PBPbattery {
-    padding: 0.5rem 0.6rem;
+#temperature {
+    padding: 0 0.6rem;
     margin: 1px 0;
 }
 
+/* ── Battery ────────────────────────────────────────────────────────────── */
 
-/* -----------------------------------------------------------------------------
- * Module-specific styles
- * -------------------------------------------------------------------------- */
-
-/* Battery styles */
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#battery.warning {
-    color: orange;
-}
+#battery.warning                { color: orange; }
+#battery.critical               { color: red; }
+#battery.warning.discharging    { animation-name: blink-warning;  animation-duration: 3s; }
+#battery.critical.discharging   { animation-name: blink-critical; animation-duration: 2s; }
 
-#battery.critical {
-    color: red;
-}
+/* ── CPU ────────────────────────────────────────────────────────────────── */
 
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-/* CPU styles */
 #cpu {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#cpu.warning {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-    color: orange;
-}
+#cpu.warning  { animation-name: blink-warning;  animation-duration: 3s; color: orange; }
+#cpu.critical { animation-name: blink-critical; animation-duration: 2s; color: red; }
 
-#cpu.critical {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    color: red;
-}
+/* ── Memory ─────────────────────────────────────────────────────────────── */
 
-/* Memory styles */
 #memory {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#memory.warning {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-    color: orange;
-}
+#memory.warning  { animation-name: blink-warning;  animation-duration: 3s; color: orange; }
+#memory.critical { animation-name: blink-critical; animation-duration: 2s; color: red; }
 
-#memory.critical {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    color: red;
-    padding: 0 5px;
-}
+/* ── Resize mode indicator ──────────────────────────────────────────────── */
 
-/* Mode styles */
 #mode {
     background: @highlight;
-    border-bottom: 3px solid transparent;
     color: white;
-    margin-left: 5px;
-    padding: 7px;
+    font-weight: bold;
+    margin-left: 4px;
 }
 
-/* Network styles */
-#network.disconnected,
-#custom-vpn.disconnected {
-    color: orange;
-}
+/* ── Network / VPN ──────────────────────────────────────────────────────── */
 
-/* Pulseaudio styles */
-#pulseaudio {
-    padding-top: 6px;
-}
+#network.disconnected    { color: orange; }
+#custom-vpn.disconnected { color: orange; }
+#custom-vpn.connected    { color: @highlight; }
 
-#pulseaudio.muted {
-    color: @highlight;
-}
+/* ── Pulseaudio ─────────────────────────────────────────────────────────── */
 
-/* Temperature styles */
-#temperature.critical {
-    color: red;
-}
+#pulseaudio.muted { color: @highlight; }
 
-/* Window and workspace styles */
+/* ── Temperature ────────────────────────────────────────────────────────── */
+
+#temperature.critical { color: red; }
+
+/* ── Window title ───────────────────────────────────────────────────────── */
+
 #window {
-    padding: 0.5rem 0.6rem;
+    padding: 0 0.6rem;
     font-weight: bold;
 }
 
-#workspaces {}
+/* ── Workspaces ─────────────────────────────────────────────────────────── */
 
 #workspaces button {
+    padding: 0 6px;
+    color: #505060;
     border-bottom: 3px solid transparent;
+    /* override GTK default button effects */
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    color: #bebebe;
+    border-bottom: 3px solid rgba(195, 0, 255, 0.45);
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 #workspaces button.focused {
+    color: #ffffff;
     border-bottom: 3px solid @highlight;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
+    color: #ffffff;
+    border-bottom: 3px solid #c9545d;
 }
 
-/* Custom styles */
-#custom-power,
-#custom-launcher {
-    font-size: 15px;
-    margin-left: 15px;
-    margin-right: 10px;
-}
+/* ── Backlight ──────────────────────────────────────────────────────────── */
 
-/* Backlight styles */
-#backlight.icon {
+#backlight#icon {
     padding-right: 1px;
-    font-size: 13px;
 }

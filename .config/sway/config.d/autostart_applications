@@ -1,16 +1,15 @@
-# Auth with polkit-gnome:
+# Auth agent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Desktop notifications
 exec mako
 
-# GTK3 applications take a long time to start
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-     
-# Password Manager
+# Export Wayland session vars to D-Bus and systemd user services
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+# Password manager
 exec 1password --silent
 
-# Night Shift
-exec wl -l 50.10 -L 14.44
+# Night light (Prague coordinates)
+exec wlsunset -l 50.10 -L 14.44
