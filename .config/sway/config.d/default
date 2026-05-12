@@ -26,8 +26,7 @@ bindsym $mod+Shift+BackSpace exec ~/.config/sway/scripts/lockman.sh
 bindsym $mod+Shift+o exec ~/.config/sway/scripts/activate_outputs.sh
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+p exec poweroff
-bindsym $mod+Shift+m exec "alacritty -e ~/.scripts/mount_latest_usb_device.sh"
-bindsym $mod+Shift+u exec "alacritty -e ~/.scripts/unmount_usb_device.sh"
+bindsym $mod+Shift+u exec udiskie-umount -a
 
 ### Application Shortcuts
 bindsym $mod+n exec $term-float --command joshuto

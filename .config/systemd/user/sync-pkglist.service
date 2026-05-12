@@ -1,0 +1,6 @@
+[Unit]
+Description=Sync installed package lists to dotfiles repo
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/sync_pkg_list.sh

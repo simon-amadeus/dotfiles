@@ -13,3 +13,6 @@ exec 1password --silent
 
 # Night light (Prague coordinates)
 exec wlsunset -l 50.10 -L 14.44
+
+# USB automount daemon
+exec udiskie
