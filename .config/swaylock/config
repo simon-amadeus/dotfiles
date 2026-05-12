@@ -7,7 +7,7 @@ font=SauceCodePro Nerd Font
 font-size=24
 
 indicator-radius=115
-indicator-thickness=8
+indicator-thickness=4
 
 ignore-empty-password
 daemonize

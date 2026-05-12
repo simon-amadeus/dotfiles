@@ -16,6 +16,7 @@
         "memory",
         "cpu",
         "pulseaudio",
+        "backlight",
         "battery",
         "clock",
         "custom/power"
@@ -23,8 +24,8 @@
     "idle_inhibitor": {
         "format": "{icon} ",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         }
     },
     "battery": {
@@ -147,5 +148,14 @@
         "on-click": "pavucontrol",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            ""
+        ],
+        "on-scroll-up": "brightnessctl -c backlight set +5%",
+        "on-scroll-down": "brightnessctl -c backlight set 5%-"
     }
 }

@@ -31,6 +31,7 @@
 
 /* ── Shared module padding ──────────────────────────────────────────────── */
 
+#backlight,
 #battery,
 #clock,
 #cpu,
@@ -49,6 +50,7 @@
 
 /* ── Hover transition for clickable modules ─────────────────────────────── */
 
+#backlight,
 #battery,
 #clock,
 #cpu,
@@ -62,6 +64,7 @@
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
+#backlight:hover,
 #battery:hover,
 #clock:hover,
 #cpu:hover,
