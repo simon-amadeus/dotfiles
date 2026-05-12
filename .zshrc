@@ -80,6 +80,7 @@ function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
 ## Custom Path
 #
 typeset -U path
+path=(${path:#""})
 if command -v go &>/dev/null; then
     path+=("$(go env GOPATH)/bin")
 fi
