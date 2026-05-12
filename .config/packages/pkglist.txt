@@ -92,6 +92,7 @@ texlive-xetex
 tldr
 traceroute
 ttf-hack-nerd
+ttf-sourcecodepro-nerd
 udisks2
 unzip
 vim

@@ -90,7 +90,7 @@ export PATH
 #
 ## 1Password CLI
 #
-source /home/knowone/.config/op/plugins.sh
+[[ -f $HOME/.config/op/plugins.sh ]] && source $HOME/.config/op/plugins.sh
 
 
 #
@@ -107,4 +107,3 @@ load_plugin() {
 
 load_plugin zsh-autosuggestions
 load_plugin zsh-syntax-highlighting
-wait  # Wait for all plugins to load in the background

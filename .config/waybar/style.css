@@ -1,15 +1,5 @@
-/* =============================================================================
- * Waybar configuration
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- * =========================================================================== */
-
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-/* Color Scheme: Arc-Dark */
-@define-color highlight #5294e2;
-@define-color base1 #404552;
+@define-color highlight #c300ff;
+@define-color base1 #1a1a2e;
 
 @keyframes blink-warning {
     70% {
@@ -49,7 +39,7 @@
 #waybar {
     background: rgba(0, 0, 0, 0.6);
     color: #bebebe;
-    font-family: Source Code Pro, sans-serif;
+    font-family: "SauceCodePro Nerd Font", sans-serif;
     font-size: 13px;
 }
 

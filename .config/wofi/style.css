@@ -1,52 +1,51 @@
-/*
-Arc-Dark Color Scheme
-*/
-
 @define-color highlight #c300ff;
-@define-color base1  #404552;
-@define-color base2  #2e2e2e;
-@define-color base3  #4b5160;
+@define-color bg       #0d0d18;
+@define-color bg-alt   #1a1a2e;
+@define-color bg-entry #13132a;
+@define-color fg       #c5c8c6;
 
-*{
-    font-family: UbuntuMono;
+* {
+    font-family: "SauceCodePro Nerd Font";
+    font-size: 13px;
 }
 
 window {
-    border: 2px solid @highlight;
+    border: 1px solid @highlight;
 }
 
 #input {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 3px;
     border: none;
-    color: white;
-    background-color: @base1;
+    color: @fg;
+    background-color: @bg-alt;
 }
 
 #inner-box {
-    background-color: @base3;
+    background-color: @bg-entry;
 }
 
 #outer-box {
     margin: 2px;
-    padding:15px;
-    background-color: @base2;
+    padding: 12px;
+    background-color: @bg;
 }
 
 #text {
-    padding: 5px;
-    color: white;
+    padding: 4px;
+    color: @fg;
 }
 
 #entry {
-    padding: 5px 10px;
+    padding: 4px 10px;
 }
 
 #entry:nth-child(even) {
-    background-color: @base1;
+    background-color: @bg-alt;
 }
 
 #entry:selected {
     background-color: @highlight;
+    color: white;
 }
