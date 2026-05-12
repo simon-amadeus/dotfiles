@@ -4,6 +4,7 @@ theme = "base16_transparent"
 auto-pairs = true
 scroll-lines = 4
 line-number = "relative"
+rulers = [80]
 auto-format = true
 auto-info = true
 text-width = 80
@@ -17,6 +18,7 @@ select = "underline"
 [editor.lsp]
 enable = true
 display-messages = true
+display-inlay-hints = true
 display-signature-help-docs = true
 snippets = true
 goto-reference-include-declaration = true
