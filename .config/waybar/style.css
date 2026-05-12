@@ -175,6 +175,7 @@
 #custom-power {
     color: #bebebe;
     font-size: 14px;
+    padding-right: 0.8rem;
 }
 
 #custom-power:hover {

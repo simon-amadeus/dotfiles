@@ -6,7 +6,7 @@ gaps inner 10
 gaps outer 0
 
 # Hide titlebar on windows:
-default_border pixel 2
+default_border pixel 1
 
 # Default Font
 font pango:Noto Sans Regular 14

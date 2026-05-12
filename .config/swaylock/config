@@ -1,20 +1,49 @@
 indicator-caps-lock
-indicator-radius=115
 
 image=$HOME/.config/swaylock/swaylock.jpg
 scaling=fill
 
-font=UbuntuMono
-font-size=72
+font=SauceCodePro Nerd Font
+font-size=24
 
+indicator-radius=115
+indicator-thickness=8
+
+ignore-empty-password
+daemonize
+
+# ── Colors ──────────────────────────────────────────────────────────────────
+
+# Text
+text-color=#c5c8c6
+text-ver-color=#c5c8c6
+text-wrong-color=#ffffff
+text-clear-color=#c5c8c6
+
+# Ring (outer border)
+ring-color=#1a1a1a
+ring-ver-color=#c300ff
+ring-wrong-color=#db0226
+ring-clear-color=#444455
+
+# Inside (fill)
+inside-color=#00000099
+inside-ver-color=#c300ff44
+inside-wrong-color=#db022644
+inside-clear-color=#00000099
+
+# Lines / separators
 line-color=#00000000
 line-ver-color=#c300ff
-text-color=#c5c8c6
-inside-color=#00000099
-inside-ver-color=#c300ff
-ring-ver-color=#c300ff
-ring-color=#1a1a1a
-key-hl-color=#c300ff
-separator-color=#00000000
-layout-text-color=#c5c8c6
 line-wrong-color=#db0226
+line-clear-color=#00000000
+separator-color=#00000000
+
+# Key highlight
+key-hl-color=#c300ff
+bs-hl-color=#db0226
+
+# Layout / caps-lock
+layout-text-color=#c5c8c6
+layout-bg-color=#00000000
+layout-border-color=#00000000
