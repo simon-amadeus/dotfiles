@@ -1,6 +1,5 @@
 1password
+1password-cli
 joshuto-bin
 mullvad-browser-bin
 mullvad-vpn-bin
-visual-studio-code-bin
-zen-browser-bin

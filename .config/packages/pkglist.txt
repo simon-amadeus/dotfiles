@@ -105,6 +105,7 @@ wlsunset
 wofi
 xdg-utils
 xorg-xwayland
+zed
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
