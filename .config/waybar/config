@@ -94,7 +94,7 @@
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ipaddr} | {essid} {frequency}",
-        "on-click": "alacritty -e nmtui"
+        "on-click": "alacritty -e iwctl"
     },
     "network#bandwidth": {
         "interval": 3,
