@@ -29,7 +29,7 @@ medium_battery_colour = "#f0e130"
 low_battery_colour    = "#ff2079"
 
 [styles.widgets]
-border_colour          = "#2d0042"
+border_colour          = "#6022f5"
 selected_border_colour = "#c300ff"
 widget_title           = { colour = "#c5c8c6" }
 text                   = { colour = "#c5c8c6" }
@@ -39,5 +39,5 @@ selected_text          = { colour = "#000000", bg_colour = "#c300ff" }
 headers = { colour = "#c300ff", bold = true }
 
 [styles.graphs]
-graph_colour = "#2d0042"
+graph_colour = "#39a0ed"
 legend_text  = { colour = "#c5c8c6" }
