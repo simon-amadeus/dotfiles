@@ -1,27 +1,10 @@
 [flags]
 rate = 1000
-color = "default"
 
-[colors]
-# borders
-border_color             = "#2d0042"
-highlighted_border_color = "#c300ff"
-
-# text
-text_color         = "#c5c8c6"
-widget_title_color = "#c5c8c6"
-table_header_color = "#c300ff"
-graph_color        = "#2d0042"
-cursor_color       = "#c300ff"
-
-# selected row
-selected_text_color = "#000000"
-selected_bg_color   = "#c300ff"
-
-# cpu — neon rainbow
-all_cpu_color   = "#c300ff"
-avg_cpu_color   = "#00e5ff"
-cpu_core_colors = [
+[styles.cpu]
+all_entry_colour  = "#c300ff"
+avg_entry_colour  = "#00e5ff"
+cpu_core_colours  = [
     "#c300ff",
     "#00e5ff",
     "#00ff87",
@@ -32,15 +15,29 @@ cpu_core_colors = [
     "#a8ff78",
 ]
 
-# memory
-ram_color  = "#00ff87"
-swap_color = "#f0e130"
+[styles.memory]
+ram_colour  = "#00ff87"
+swap_colour = "#f0e130"
 
-# network
-rx_color = "#00e5ff"
-tx_color = "#ff2079"
+[styles.network]
+rx_colour = "#00e5ff"
+tx_colour = "#ff2079"
 
-# battery
-high_battery_color   = "#00ff87"
-medium_battery_color = "#f0e130"
-low_battery_color    = "#ff2079"
+[styles.battery]
+high_battery_colour   = "#00ff87"
+medium_battery_colour = "#f0e130"
+low_battery_colour    = "#ff2079"
+
+[styles.widgets]
+border_colour          = "#2d0042"
+selected_border_colour = "#c300ff"
+widget_title           = { colour = "#c5c8c6" }
+text                   = { colour = "#c5c8c6" }
+selected_text          = { colour = "#000000", bg_colour = "#c300ff" }
+
+[styles.tables]
+headers = { colour = "#c300ff", bold = true }
+
+[styles.graphs]
+graph_colour = "#2d0042"
+legend_text  = { colour = "#c5c8c6" }
