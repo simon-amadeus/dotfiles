@@ -1,7 +1,4 @@
 @define-color highlight #c300ff;
-@define-color bg       #0d0d18;
-@define-color bg-alt   #1a1a2e;
-@define-color bg-entry #13132a;
 @define-color fg       #c5c8c6;
 
 * {
@@ -10,6 +7,7 @@
 }
 
 window {
+    background: transparent;
     border: 1px solid @highlight;
 }
 
@@ -19,17 +17,17 @@ window {
     border-radius: 3px;
     border: none;
     color: @fg;
-    background-color: @bg-alt;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 #inner-box {
-    background-color: @bg-entry;
+    background-color: transparent;
 }
 
 #outer-box {
     margin: 2px;
     padding: 12px;
-    background-color: @bg;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 #text {
@@ -42,7 +40,7 @@ window {
 }
 
 #entry:nth-child(even) {
-    background-color: @bg-alt;
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
 #entry:selected {
