@@ -17,7 +17,8 @@
         "cpu",
         "pulseaudio",
         "battery",
-        "clock"
+        "clock",
+        "custom/power"
     ],
 
     "idle_inhibitor": {
@@ -106,6 +107,12 @@
         "interval": 5,
         "return-type": "json",
         "on-click": "mullvad-vpn"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false
     },
 
     "sway/window": {

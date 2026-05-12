@@ -24,6 +24,7 @@ bindkey '^[[B' history-beginning-search-forward
 ## Enable and configure completion
 #
 autoload -Uz compinit
+mkdir -p "$HOME/.cache/zsh"
 compinit -C
 
 zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate _ignored
@@ -60,6 +61,7 @@ eval "$(starship init zsh)"
 ## Aliases and Functions
 #
 command -v bat &>/dev/null && alias cat='bat'
+command -v bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 command -v btm &>/dev/null && alias htop='btm'
 command -v code &>/dev/null && alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
 command -v git &>/dev/null && alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -103,7 +105,7 @@ load_plugin() {
     if [[ -f /usr/share/zsh/plugins/$plugin/$plugin.zsh ]]; then
         source /usr/share/zsh/plugins/$plugin/$plugin.zsh
     else
-        echo "Error: Plugin $plugin not found"
+        echo "Error: Plugin $plugin not found" >&2
     fi
 }
 

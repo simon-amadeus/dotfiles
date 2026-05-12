@@ -18,6 +18,11 @@ window {
     border: none;
     color: @fg;
     background-color: rgba(255, 255, 255, 0.08);
+    transition: background-color 0.15s ease;
+}
+
+#input:focus {
+    background-color: rgba(255, 255, 255, 0.13);
 }
 
 #inner-box {
@@ -37,6 +42,8 @@ window {
 
 #entry {
     padding: 4px 10px;
+    border-radius: 3px;
+    transition: background-color 0.12s ease;
 }
 
 #entry:nth-child(even) {
@@ -45,5 +52,9 @@ window {
 
 #entry:selected {
     background-color: @highlight;
+    color: white;
+}
+
+#entry:selected #text {
     color: white;
 }

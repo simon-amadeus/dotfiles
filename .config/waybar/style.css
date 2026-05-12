@@ -34,15 +34,44 @@
 #battery,
 #clock,
 #cpu,
+#custom-power,
 #custom-vpn,
 #idle_inhibitor,
 #memory,
 #mode,
 #network,
+#network#bandwidth,
 #pulseaudio,
 #temperature {
     padding: 0 0.6rem;
     margin: 1px 0;
+}
+
+/* ── Hover transition for clickable modules ─────────────────────────────── */
+
+#battery,
+#clock,
+#cpu,
+#custom-power,
+#custom-vpn,
+#idle_inhibitor,
+#memory,
+#network,
+#network#bandwidth,
+#pulseaudio {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#battery:hover,
+#clock:hover,
+#cpu:hover,
+#custom-power:hover,
+#idle_inhibitor:hover,
+#memory:hover,
+#network:hover,
+#network#bandwidth:hover,
+#pulseaudio:hover {
+    color: white;
 }
 
 /* ── Battery ────────────────────────────────────────────────────────────── */
@@ -120,6 +149,7 @@
     box-shadow: none;
     text-shadow: none;
     background: transparent;
+    transition: color 0.15s ease, border-bottom-color 0.15s ease;
 }
 
 #workspaces button:hover {
@@ -140,8 +170,13 @@
     border-bottom: 3px solid #c9545d;
 }
 
-/* ── Backlight ──────────────────────────────────────────────────────────── */
+/* ── Power button ───────────────────────────────────────────────────────── */
 
-#backlight#icon {
-    padding-right: 1px;
+#custom-power {
+    color: #bebebe;
+    font-size: 14px;
+}
+
+#custom-power:hover {
+    color: @highlight;
 }
