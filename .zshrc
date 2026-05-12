@@ -80,10 +80,11 @@ function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
 ## Custom Path
 #
 typeset -U path
-path+=("$(go env GOBIN)")
-path+=("$(go env GOPATH)/bin")
-path+=("$HOME/.nix-profile/bin")
-path+=("$HOME/.cargo/bin")
+if command -v go &>/dev/null; then
+    path+=("$(go env GOPATH)/bin")
+fi
+[[ -d "$HOME/.nix-profile/bin" ]] && path+=("$HOME/.nix-profile/bin")
+[[ -d "$HOME/.cargo/bin" ]] && path+=("$HOME/.cargo/bin")
 export PATH
 
 

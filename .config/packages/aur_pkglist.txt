@@ -1,8 +1,6 @@
 1password
-android-studio
 joshuto-bin
 mullvad-browser-bin
 mullvad-vpn-bin
-slack-desktop
 visual-studio-code-bin
 zen-browser-bin
