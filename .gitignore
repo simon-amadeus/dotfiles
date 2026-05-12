@@ -9,6 +9,7 @@
 !/.config
 /.config/*
 !/.config/alacritty
+!/.config/bottom
 !/.config/environment.d
 !/.config/git
 !/.config/gtk-3.0

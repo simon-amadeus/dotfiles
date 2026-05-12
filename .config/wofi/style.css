@@ -51,7 +51,7 @@ window {
 }
 
 #entry:selected {
-    background-color: @highlight;
+    background-color: rgba(195, 0, 255, 0.7);
     color: white;
 }
 
