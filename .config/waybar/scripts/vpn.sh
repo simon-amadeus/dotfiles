@@ -1,6 +1,6 @@
 #!/bin/sh
 
-STATUS=$(mullvad status)
+STATUS=$(timeout 3 mullvad status 2>/dev/null)
 TOOLTIP=$(printf '%s' "$STATUS" | sed 's/"/\\"/g' | tr '\n' ' ' | sed 's/ $//')
 
 if printf '%s' "$STATUS" | grep -q 'Connected'; then
