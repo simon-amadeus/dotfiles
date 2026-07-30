@@ -5,10 +5,7 @@ docker-compose
 feh
 firefox
 firejail
-git
-grim
 mpv
 neovim
-openssh
 spotify-launcher
 traceroute

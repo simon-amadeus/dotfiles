@@ -2,7 +2,7 @@
 ## History Configuration
 #
 HISTFILE=~/.histfile
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=100000
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -25,7 +25,7 @@ bindkey '^[[B' history-beginning-search-forward
 #
 autoload -Uz compinit
 mkdir -p "$HOME/.cache/zsh"
-compinit -C
+compinit -C -d "$HOME/.cache/zsh/zcompdump"
 
 zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate _ignored
 zstyle ':completion:*' list-colors "no=00;37:fi=00;37:di=01;34:ln=01;36:pi=33:so=35:bd=33:cd=33:or=31:mi=05;37;41"
@@ -40,17 +40,6 @@ zstyle :compinstall filename "$HOME/.zshrc"
 
 
 #
-## Set Default Applications
-#
-if command -v helix &> /dev/null; then
-    export EDITOR='helix'
-fi
-if command -v firefox-developer-edition &> /dev/null; then
-    export BROWSER='firefox-developer-edition'
-fi
-
-
-#
 ## Custom Prompt
 #
 ZLE_RPROMPT_INDENT=0
@@ -60,10 +49,11 @@ eval "$(starship init zsh)"
 #
 ## Aliases and Functions
 #
-command -v bat &>/dev/null && alias cat='bat'
-command -v bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+if command -v bat &>/dev/null; then
+    alias cat='bat'
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
 command -v btm &>/dev/null && alias htop='btm'
-command -v code &>/dev/null && alias code='/usr/bin/code --disable-gpu --password-store="gnome"'
 command -v git &>/dev/null && alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 command -v duf &>/dev/null && alias df='duf'
 command -v dust &>/dev/null && alias du='dust'
@@ -75,7 +65,7 @@ command -v lsd &>/dev/null && alias l='lsd -la'
 command -v wl-copy &>/dev/null && alias co='wl-copy'
 command -v wl-paste &>/dev/null && alias pa='wl-paste'
 
-function sudo() { command sudo EDITOR=/usr/bin/helix "$@"; }
+function sudo() { command sudo ${EDITOR:+EDITOR="$EDITOR"} "$@"; }
 
 
 #

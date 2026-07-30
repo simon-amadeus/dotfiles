@@ -17,12 +17,13 @@ exec swayidle -w \
     timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
     timeout 600 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -C ~/.config/swaylock/config'
+    before-sleep 'swaylock -f -C ~/.config/swaylock/config' \
+    lock 'swaylock -f -C ~/.config/swaylock/config'
 
 ## Key Bindings
 
 ### System Controls
-bindsym $mod+Shift+BackSpace exec ~/.config/sway/scripts/lockman.sh
+bindsym $mod+Shift+BackSpace exec loginctl lock-session
 bindsym $mod+Shift+o exec ~/.config/sway/scripts/activate_outputs.sh
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+p exec poweroff
@@ -31,7 +32,7 @@ bindsym $mod+Shift+u exec udiskie-umount -a
 ### Application Shortcuts
 bindsym $mod+n exec $term-float --command joshuto
 bindsym $mod+o exec mullvad-browser
-bindsym $mod+c exec code --disable-gpu
+bindsym $mod+c exec code
 bindsym $mod+Return exec $term-float
 bindsym $mod+Shift+e exec $powermenu
 bindsym $mod+q kill

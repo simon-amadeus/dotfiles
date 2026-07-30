@@ -1,6 +1,9 @@
-export MOZ_ENABLE_WAYLAND=1
-export WLR_NO_HARDWARE_CURSORS=1
-export WLR_RENDERER_ALLOW_SOFTWARE=1
-export XDG_CURRENT_DESKTOP=sway
-export XDG_SESSION_TYPE=wayland
-export GTK_THEME="Adwaita:dark"
+# Wayland session environment — single source of truth is
+# ~/.config/environment.d/wayland.conf (also read by systemd user units).
+set -a
+. "$HOME/.config/environment.d/wayland.conf"
+set +a
+
+# Default applications
+command -v helix >/dev/null 2>&1 && export EDITOR=helix
+command -v firefox-developer-edition >/dev/null 2>&1 && export BROWSER=firefox-developer-edition

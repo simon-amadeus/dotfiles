@@ -15,9 +15,8 @@
 
 [core]
 	autocrlf = input
-	editor = /usr/bin/helix
+	editor = helix
 	eol = lf
-	pager = /usr/bin/more
 
 [credential]
 	helper = cache --timeout=3600
@@ -37,9 +36,6 @@
 
 [push]
 	default = simple
-
-[safe]
-	directory = /opt/flutter
 
 [tag]
 	forceSignAnnotated = false

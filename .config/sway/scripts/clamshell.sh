@@ -1,5 +1,5 @@
-#!/usr/bin/bash
-if cat /proc/acpi/button/lid/*/state | grep -q open; then
+#!/bin/sh
+if grep -q open /proc/acpi/button/lid/*/state; then
     swaymsg output eDP-1 enable
 else
     swaymsg output eDP-1 disable

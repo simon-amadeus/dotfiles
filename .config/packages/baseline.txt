@@ -1,0 +1,113 @@
+# Packages arch-install already ensures. sync_pkg_list.sh subtracts these
+# from `pacman -Qqen` / `pacman -Qqem` so pkglist.txt and aur_pkglist.txt
+# stay a curated delta of what was installed by hand on top of the base
+# system. Lines starting with # are ignored.
+#
+# Keep in sync with:
+#   arch-install/2-install/lib/system.sh            (pacstrap)
+#   arch-install/2-install/tasks/{dns_crypt,users}.yml
+#   arch-install/3-first-boot/tasks/*.yml
+#   arch-install/4-customize/tasks/{desktop_sway,aur_helper}.yml
+
+# pacstrap base (2-install/lib/system.sh)
+base
+base-devel
+btrfs-progs
+cryptsetup
+sudo
+git
+vim
+iwd
+python
+ansible
+go-yq
+rsync
+linux-firmware
+# kernel/microcode variants (CFG_KERNEL / CFG_MICROCODE)
+linux
+linux-headers
+linux-lts
+linux-lts-headers
+linux-zen
+linux-zen-headers
+linux-hardened
+linux-hardened-headers
+intel-ucode
+amd-ucode
+
+# 2-install tasks
+dnscrypt-proxy
+zsh
+
+# 3-first-boot: audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+pavucontrol
+
+# 3-first-boot: bluetooth
+bluez
+bluez-utils
+
+# 3-first-boot: cli_tools
+bat
+bottom
+duf
+dust
+fd
+helix
+jq
+less
+lsd
+man-db
+openssh
+ripgrep
+starship
+tealdeer
+zsh-autosuggestions
+zsh-syntax-highlighting
+
+# 3-first-boot: printing
+cups
+avahi
+nss-mdns
+
+# 3-first-boot: firewall / secure boot / snapshots / usb automount
+firewalld
+sbctl
+snapper
+snap-pac
+udiskie
+
+# 4-customize: desktop_sway
+sway
+swaybg
+swaylock
+swayidle
+waybar
+ttf-font-awesome
+wofi
+foot
+alacritty
+mako
+grim
+slurp
+wl-clipboard
+xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
+xdg-user-dirs
+polkit
+polkit-gnome
+noto-fonts
+noto-fonts-emoji
+ttf-sourcecodepro-nerd
+blueman
+brightnessctl
+kanshi
+playerctl
+wlsunset
+
+# 4-customize: aur_helper (paru shows up in pacman -Qqem)
+paru
