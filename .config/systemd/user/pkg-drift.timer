@@ -1,8 +1,8 @@
 [Unit]
-Description=Sync package lists weekly
+Description=Daily package drift report
 
 [Timer]
-OnCalendar=weekly
+OnCalendar=daily
 Persistent=true
 
 [Install]

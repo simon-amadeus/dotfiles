@@ -1,0 +1,6 @@
+[Unit]
+Description=Report package drift against dotfiles manifests
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/pkg_drift.sh
