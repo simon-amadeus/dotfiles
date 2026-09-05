@@ -25,6 +25,14 @@
 !/.config/systemd
 !/.config/waybar
 !/.config/wofi
+!/.config/zed
+/.config/zed/*
+!/.config/zed/keymap.json
+!/.config/zed/settings.json
+!/.config/zed/languages
+!/.config/zed/themes
+/.config/zed/themes/*
+!/.config/zed/themes/blacklight.json
 
 !/.scripts
 
